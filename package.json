@@ -1,0 +1,21 @@
+{
+  "name": "ikinokotte",
+  "version": "1.0.0",
+  "description": "A Project where we want to create a website where you can have your own pet!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiogoSilva23/Ikinokotte.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DiogoSilva23/Ikinokotte/issues"
+  },
+  "homepage": "https://github.com/DiogoSilva23/Ikinokotte#readme"
+}
