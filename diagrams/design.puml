@@ -1,0 +1,35 @@
+@startuml
+
+package controller {
+    class Controller {
+        - Pet pet
+        + varType getAllVars()
+        + void setAllVars()
+        + void feed()
+        + void drink()
+        + void play()
+        + Integer age()
+        + void updateHealth()
+    }
+}
+
+package models {
+    class Pet {
+        - String name
+        - String status
+        - Integer health
+        - Integer hunger
+        - Integer thrist
+        - Integer happiness
+        - Integer healthRate
+        - Integer hungerRate
+        - Integer thristRate
+        - Integer happinessRate
+        - Date birthDate
+        + void Pet(String name)
+    }
+}
+
+Controller <--- Pet
+
+@enduml
