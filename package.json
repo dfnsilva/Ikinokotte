@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/DiogoSilva23/Ikinokotte/issues"
   },
-  "homepage": "https://github.com/DiogoSilva23/Ikinokotte#readme"
+  "homepage": "https://github.com/DiogoSilva23/Ikinokotte#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
