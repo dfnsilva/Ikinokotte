@@ -1,0 +1,13 @@
+.footer {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    background-color: #557153;
+    width: 100%;
+    color: whitesmoke;
+}
+
+html {
+    font-family: Arial;
+    background-color: #A9AF7E;
+}
