@@ -59,3 +59,32 @@ function setCookie(name, value) {
     // Set the cookie with the Tamagotchi data
     document.cookie = `${name}=${valueString}; ${expires}=${date}; path=/`;
   }
+
+
+  $("#volume").slider({
+    min: 0,
+    max: 100,
+    value: 0,
+    range: "min",
+    slide: function(event, ui) {
+      setVolume(ui.value / 100);
+    }
+  });
+  
+  var myMedia = document.createElement('audio');
+  $('#player').append(myMedia);
+  myMedia.id = "myMedia";
+
+  playAudio('', 0);
+  
+  function playAudio(fileName, myVolume) {
+          myMedia.src = fileName;
+          myMedia.setAttribute('loop', 'loop');
+      setVolume(myVolume);
+      myMedia.play();
+  }
+  
+  function setVolume(myVolume) {
+  var myMedia = document.getElementById('myMedia');
+  myMedia.volume = myVolume;
+  }
