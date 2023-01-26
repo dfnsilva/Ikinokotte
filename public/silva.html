@@ -10,6 +10,8 @@
     <link href="css/contentStyle.css" rel="stylesheet">
     <link href="css/gameStyle.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/67c014f3d2.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="scripts/script.js"></script>
     <script src="scripts/ikinokotte.js"></script>
     <script src="scripts/controller.js"></script>
@@ -22,12 +24,21 @@
             <div class="petName">Pet's name: DaBaby</div>
             <button class="buttonLogout"><i class="fa fa-sign-out" style="font-size: 25px" aria-hidden="true"></i></button>
         </header>
-
+        <!-- adicionei esta tag so para testar umas cenas-->
+        <div class="petThings">
+            Name:<div id="name"></div>
+            Health:<div id="health"></div>
+            Food:<div id="food"></div>
+            Water:<div id="water"></div>
+            Mood:<div id="mood"></div>
+        </div>
         <footer class="footer">
             <div class="gameButton">
-                <button onclick="startSimu()" class="buttonAction">Beans</button>
-                <button onclick="giveWater()"class="buttonAction">Greens</button>
-                <button class="buttonAction">Tomatos</button>
+                <button onclick="startPet()" class="buttonAction">Start</button>
+                <button onclick="giveWater()" class="buttonAction">Water</button>
+                <button onclick="giveFood()" class="buttonAction">food</button>
+                <button onclick="playPet()" class="buttonAction">play</button>
+                <button onclick="renewPet()" class="buttonAction">R</button>
             </div>
         </footer>
     </div>
