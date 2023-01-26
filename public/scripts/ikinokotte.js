@@ -7,10 +7,11 @@
   //create the sync up with passed time func
   
   
-  Number.prototype.clamp = function(min, max) {
+Number.prototype.clamp = function(min, max) {
     return Math.min(Math.max(this, min), max);
   };
 class ikinokotte {
+    
     constructor(name) {
       this.name = name;
       this.age = 0;
@@ -21,36 +22,80 @@ class ikinokotte {
       this.mood = 50;
 
     }
+
+    startPet(){
+        this.updateHealth();
+        this.updateResourses();
+    }
     // Update the ikinokotte's health every minute
-    updateHealth() {
+
+    async updateHealth(){
         setInterval(() => {
-          this.health += this.healthRate
-          if (this.health <= 0) {
-            console.log(`${this.name} has died.`);
-            clearInterval(this.updateHealth);
-            //send to server the notice
-          }
-        }, 1000);//CHANGE TO REAL TIME
-      }
-    updateHealth(){
+            console.log(`${this.health} health.`)
+            if(this.food <20 || this.food > 180){
+                this.health-=10;
+            }else if((this.food>=20 && this.food<70) || (this.food>140 && this.food<=180)){
+                this.health-=1;
+            }
+
+            if(this.water <40){
+                this.health-=2;
+            }else if(this.water>=40 && this.water<80){
+                this.health-=1
+            }else{
+                this.health
+            }
+
+            
+            if(this.mood <0){
+                this.health-=2;
+            }else if(this.mood <=80){
+                this.health-=5;
+            }
+            this.health.toFixed(0);
+            this.health.clamp(0,100)
+            console.log(`${this.health} health.`)
+
+            if (this.health <= 0) {
+              console.log(`${this.name} has died.`);
+              clearInterval(this.updateHealth);
+              //send to server the notice
+            }
+          }, 5000);//CHANGE TO REAL TIME
         // FOOD
-        if(this.food <20 || this.food > 180){
-            this.health-=10;
-        }else if((this.food>=20 && this.food<70) || (this.food>140 && this.food<=180)){
-            this.health-=1;
+    }
 
-        }
+    async updateResourses(){
+        setInterval(() => {
+            if(this.food <20){
+                this.food-=5;
+            }else if((this.food>=20 && this.food<70)){
+                this.food-=3;
+            }else if((this.food>140 && this.food<=180)){
+                this.food-=2;
+            }else{
+                this.food-=1;
+            }
+            this.food.clamp(0,200)
+            
+            if(this.water <40){
+                this.water-=4;
+            }else if(this.water>=40 && this.water<80){
+                this.water-=2
+            }else{
+                this.water-=1
+            }
+            this.water.clamp(0,200)
 
-        if(this.water <40){
-            this.health-=2;
-        }
-        /*
-        if(this.happiness <0){
-            this.healthRate-=2;
-            this.waterRate=(100-this.water)/10;
-            this.waterRate.toFixed(0);
-        }*/
-
+            
+            if(this.mood <0){
+                this.health-=2;
+            }else if(this.mood <-80){
+                this.health-=5;
+            }
+            
+        
+          }, 2500);//CHANGE TO REAL TIME
     }
   
     
@@ -72,6 +117,7 @@ class ikinokotte {
         this.food.clamp(0,200)
     }
 
+    // give water to the ikinokotte
     drink() {
         this.water += 5;
         this.mood += 1;
@@ -79,41 +125,17 @@ class ikinokotte {
 
     }
 
+
+    // increase mood 
     play() {
         this.mood += 10;
         this.water-=2;
         this.food-=5;
         this.food.clamp(0,100)
     }
-    updateResourses(){
-        /*
-        if(this.food <20 || this.food > 180){
-            this.foodRate=(200-this.food+20)/20;
-            this.foodRate.toFixed(0);
-        }else if((this.food>=20 && this.food<70) || (this.food>140 && this.food<=180)){
-            this.foodRate=(200-this.food+20)/20;
-            this.foodRate.toFixed(0);
-        }else if(this.food>=70 && this.food<=140){
-            this.foodRate=1;
-        }
-        if(this.water <40){
-            this.health-=2;
-            this.waterRate=(100-this.water)/10;
-            this.waterRate.toFixed(0);
-        }*/
-    }
+    
     
     age(){
         console.log("age")
     }
   }
-
-  // Create a new ikinokotte
-  const ikinokotte = new ikinokotte("Tommy");
-  
-  // Start updating the ikinokotte's health
-  ikinokotte.updateHealth();
-  
-  // Feed the ikinokotte
-  ikinokotte.feed();
-  console.log(`${ikinokotte.name} was fed. food: ${ikinokotte.food} mood: ${ikinokotte.mood}`);

@@ -1,4 +1,4 @@
-function testIncrement(){
+/*function testIncrement(){
     let cookie = getCookie('ikinokotte')
     console.log(cookie)
     cookie = Number(cookie)+5;
@@ -58,7 +58,7 @@ function setCookie(name, value) {
     expires = "; expires=" + date.toUTCString();
     // Set the cookie with the Tamagotchi data
     document.cookie = `${name}=${valueString}; ${expires}=${date}; path=/`;
-  }
+  }*/
 
 
   $("#volume").slider({
