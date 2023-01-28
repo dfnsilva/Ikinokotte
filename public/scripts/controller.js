@@ -167,4 +167,4 @@ async function updateHealth(){
       }, 5000);//CHANGE TO REAL TIME
 }
 
-createOrLoadPet();
+//createOrLoadPet();

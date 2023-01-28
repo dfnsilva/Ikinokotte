@@ -21,6 +21,7 @@ Name:<div id="name"></div>
             Mood:<div id="mood"></div>
 
 */
+/*
 $("#volume").slider({
     min: 0,
     max: 100,
@@ -47,4 +48,4 @@ $("#volume").slider({
   function setVolume(myVolume) {
   var myMedia = document.getElementById('myMedia');
   myMedia.volume = myVolume;
-  }
+  }*/

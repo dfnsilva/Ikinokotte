@@ -1,4 +1,5 @@
 .buttonLS {
+    position: relative;
     margin-top: 45vh;
     text-align: center;
 }
@@ -24,7 +25,23 @@
     touch-action: manipulation;
     margin-left: 10px;
 }
-
+.buttonDL {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-left: 10px;
+}
 .buttonD:active {
     box-shadow: 0px 0px 0px 0px;
     top: 5px;
@@ -85,7 +102,56 @@
     cursor: pointer;
     outline: none;
   }
+
+  .loginD{
+    position: fixed;
+    left: 20%;
+    top: 50%;
+  }
   
+  .loginD img{
+    width: 80%;
+    height: 80%;
+    margin-top: -200px;
+    display: block;
+  }
+  
+  .contentL{
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    text-align: center;
+    top: 25%;
+    color: #03572d;
+  }
+  
+  .contentL h2{
+    text-align: center;
+    font-size: 25px;
+    margin-top: -400px;
+  }
+  
+  .contentL .formElement{
+    margin: 13px 0px;
+  }
+  
+  .contentL .formElement label{
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .contentL .formElement input[type="text"], 
+  .contentL .formElement input[type="password"]{
+    margin-top: 5px;
+    display: block;
+    width: 35%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 270px;
+    position: relative;
+  }
 
 
 	

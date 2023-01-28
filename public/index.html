@@ -11,6 +11,10 @@
     <script src="https://use.fontawesome.com/67c014f3d2.js"></script>
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/ikinokotte.js"></script>
+    <script src="scripts/controller.js"></script>
+    <script src="scripts/login.js"></script>
 </head>
 
 <body style="overflow: hidden;">
@@ -31,6 +35,24 @@
 		<div id="volume"></div>
 		<i class="fa fa-volume-up"></i>
 	</div>
+
+  <div class="loginD">
+    <img src="images/loginBox2.png" class="boxL">
+    <div class="contentL">
+        <h2>Login</h2>
+        <div class="formElement">
+            <label for="username"><h4>Username</h4></label>
+            <input type="text" id="username" placeholder="Enter Username">
+        </div>
+        <div class="formElement">
+            <label for="password"><h4>Password</h4></label>
+            <input type="password" id="password" placeholder="Enter Password">
+        </div>
+        <center><div id="pMsg"></div></center>
+        <div class="formElement">
+            <button onclick="tryLogin()" id="loginBtn" class="buttonDL">Login</button>
+    </div>  
+  </div>
 
   <script src="scripts/script.js"></script>
 </body>
