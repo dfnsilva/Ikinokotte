@@ -1,10 +1,13 @@
 /**/
 const express = require("express");
+const bodyParser = require('body-parser');
+const fs = require('fs');
 const app = express();
+
+
 app.use(express());
-app.use(express.static('public'));
-
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 let users = require('./db/users');
 let pets = require('./db/pets');
 
@@ -103,4 +106,8 @@ function userExists(name) {
 
     
 }
+
+
+app.use(express());
+app.use(express.static('public'));
 app.listen(8080)
