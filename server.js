@@ -15,7 +15,6 @@ app.post("/signUp", (req, res) => {
     const username = req.body.username;
     if (!userExists(username)) {
         const newUser = {
-            id:users[users.length-1].id+1,
             username: username,
             password: req.body.password,
             petHistory: "tbd"
@@ -47,8 +46,7 @@ app.post("/login", (req, res) => {
     for (user of users) {
         if (user.username === nome)
             if (user.password === senha) {
-                return res.status(201).json({ 
-                    id: user.id,
+                return res.status(201).json({
                     name: user.name,
                     petHistory:user.petHistory })
             } else {
@@ -58,28 +56,75 @@ app.post("/login", (req, res) => {
     return res.status(404).json({ msg: "User not found!" })
 });
 
-//
+//~
+/* 
 
-
-app.post("/newPet", (req, res) => {
-    const userid = req.body.userid;
-    const petname = req.body.petname;
-    if (!userHasPet(userid)) {
-        const newPet = {
-            ownerId:userid,
-            pet: new ikinokotte(petname)
+app.delete("/deleteProd/:name", (req, res) => {
+    const name= req.params.name;
+    let dbAux = [];
+    for (prod of products){
+        if (prod.name == name) {
+            result=prod;
+        }else{
+            dbAux.push(prod);
         }
-        pets.push(newPet);
-        writeToDB("./db/pets.json", users);
+    }
+    products = [];
+    for (let i = 0; i < dbAux.length; i++) {
+        products.push(dbAux[i]); // copia os dados
+    }
+    writeToDB("./db/products.json", products);
+    return res.status(201).send({
+        msg: `Product deleted`
+    });
+    
+});
+
+*/
+
+app.get("/getSavedPet/:name", (req, res) => {
+    const owner = req.params.name;
+    for (pet of pets){
+        console.log(owner)
+        console.log(pet.owner)
+        if (pet.owner == owner) {
+            return res.status(201).send({
+                msg: `User saved Pet: ${pet.name}`,
+                pet: pet
+            });
+        }
+    }
+    return res.status(409).send({
+        msg: 'User has no saved pet'
+    }); 
+});
+
+app.post("/savePet", (req, res) => {
+    const savePet = req.body;
+    if(!userHasPet(req.body.owner)){
+        pets.push(pet);
+        writeToDB("./db/pets.json", pets);
         return res.status(201).send({
-            msg: `New Pet created ${petname}`
+            msg: `New Pet created`
         });
-    } else {
-        return res.status(409).send({
-            msg: 'User already has a Pet Associated'
+    }else{
+        console.log(req.body)
+        for (pet of pets){
+            if (pet.owner == savePet.owner) {
+                pet=savePet;
+            }
+        }
+        pets = []
+        console.log(req.body)
+        pets.push(pet);
+        writeToDB("./db/pets.json", pets);
+        return res.status(201).send({
+            msg: `Pet Saved`
         });
     }
+    
 });
+
 
 function writeToDB(fich, db) {
     fs.writeFile(fich, JSON.stringify(db, null, 4), 'utf8', err => {
@@ -90,21 +135,21 @@ function writeToDB(fich, db) {
         }
     })
 }
-function userHasPet(id) {
-    for (pet of pets)
-        if (pet.userid === id) {
-            return true;
+function userHasPet(userName){
+    for (pet of pets){
+        if (pet.owner === userName){
+            return true
         }
-    return false;
+    }
+    return false
+
 }
 function userExists(name) {
     for (user of users)
         if (user.username === name) {
             return true;
         }
-    return false;
-
-    
+    return false
 }
 
 

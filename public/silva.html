@@ -14,7 +14,7 @@
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="scripts/script.js"></script>
     <script src="scripts/ikinokotte.js"></script>
-    <script src="scripts/controller.js"></script>
+    <script src="scripts/petController.js"></script>
     <script src="scripts/login.js"></script>
 </head>
 
@@ -39,10 +39,14 @@
                 <button onclick="giveWater()" class="buttonAction">Water</button>
                 <button onclick="giveFood()" class="buttonAction">food</button>
                 <button onclick="playPet()" class="buttonAction">play</button>
-                <button onclick="renewPet()" class="buttonAction">R</button>
+                <button onclick="savePetToDB()" class="buttonAction">S</button>
+                <button onclick="checkSavedPet()" class="buttonAction">G</button>
             </div>
         </footer>
     </div>
+    <script>
+        createOrLoadPet();
+    </script>
 
 </body>
 

@@ -39,6 +39,8 @@ function successLogin(json){
     //document.getElementById('showLogin').style.opacity = 0
     //change to other screen
     //load pet
+    console.log(json.id)
+    localStorage.setItem("userId",json.id)
     console.log("nice login")
 }
 function failedLogin(json){
