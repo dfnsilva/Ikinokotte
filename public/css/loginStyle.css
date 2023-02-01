@@ -1,7 +1,10 @@
+/* Main Page Login and Sign Up Buttons*/
+
 .buttonLS {
     position: relative;
     margin-top: 45vh;
     text-align: center;
+    position: relative;
 }
 
 .buttonF{
@@ -10,7 +13,7 @@
 
 .buttonD {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 2px;
     text-decoration: none;
     text-transform: uppercase;
@@ -43,12 +46,80 @@
   margin-left: 10px;
 }
 .buttonD:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: -5px;
+}
+
+/* Button in Login*/
+
+.buttonDL {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-left: 220px;
+  margin-top: 40px;
+}
+
+.buttonDL:active {
     box-shadow: 0px 0px 0px 0px;
     top: 5px;
     left: -5px;
 }
 
-#player {
+
+.contentL .formElement3{
+  -moz-transform: rotate(-9deg);
+  -webkit-transform: rotate(-9deg);  
+}
+
+/* Button in Login*/
+
+.buttonDL {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-left: 220px;
+  margin-top: 35px;
+}
+
+.buttonDL:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: -5px;
+}
+
+
+.contentL .formElement3{
+  -moz-transform: rotate(-9deg);
+  -webkit-transform: rotate(-9deg);  
+}
+
+/* Volume Bar*/
+
+/*#player {
     width: 350px;
     height: 50px;
     position: relative;
@@ -56,102 +127,171 @@
     top: 80px;
   }
   
-  #player i {
-    position: absolute;
-    margin-top: -6px;
-    color: #666;
-  }
-  
-  .fa-volume-down {
-    margin-left: -8px;
-  }
-  
-  .fa-volume-up {
-    margin-right: -8px;
-    right: 0;
-  }
-  
-  #volume {
-    position: absolute;
-    left: 24px;
-    margin: 0 auto;
-    height: 5px;
-    width: 300px;
-    background: #555;
-    border-radius: 15px;
-  }
-  
-  #volume .ui-slider-range-min {
-    height: 5px;
-    width: 300px;
-    position: absolute;
-    background: #2ecc71;
-    border: none;
-    border-radius: 10px;
-    outline: none;
-  }
-  
-  #volume .ui-slider-handle {
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    background: #FFF;
-    position: absolute;
-    margin-left: -8px;
-    margin-top: -8px;
-    cursor: pointer;
-    outline: none;
-  }
+#player i {
+  position: absolute;
+  margin-top: -6px;
+  color: #666;
+}
 
-  .loginD{
-    position: fixed;
-    left: 20%;
-    top: 50%;
-  }
+.fa-volume-down {
+  margin-left: -8px;
+}
+
+.fa-volume-up {
+  margin-right: -8px;
+  right: 0;
+}
+
+#volume {
+  position: absolute;
+  left: 24px;
+  margin: 0 auto;
+  height: 5px;
+  width: 300px;
+  background: #555;
+  border-radius: 15px;
+}
+
+#volume .ui-slider-range-min {
+  height: 5px;
+  width: 300px;
+  position: absolute;
+  background: #2ecc71;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+#volume .ui-slider-handle {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background: #FFF;
+  position: absolute;
+  margin-left: -8px;
+  margin-top: -8px;
+  cursor: pointer;
+  outline: none;
+} */
+
+/*Login Style*/
+
+.loginD{
+  position: absolute;
+  z-index: 1;
+  left: 24vw;
+  top: 45%;
+}
+
+.loginD img{
+  width: 90%;
+  height: 90%;
+  margin-top: -200px;
+  text-align: center;
+}
+
+/* Close Button*/
+
+.contentL .closeB{
+  position: absolute;
+  top: -55px;
+  left: 680px;
+  width: 23px;
+  height: 23px;
+  background: rgb(255, 255, 255);
+  text-align: center;
+  line-height: 23px;
+  border-radius: 15px;
+  border:1.5px solid black;
+  cursor: pointer;
+  -webkit-transform: rotate(-9.3deg); 
+  -moz-transform: rotate(-9.3deg); 
+  font-size: 20px;
+}
+
+/* Content */
+
+.contentL{
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  text-align: center;
+  top: 25%;
+  color: black;
+}
+
+.contentL h2{
+  text-align: center;
+  font-size: 30px;
+  margin-top: -450px;
+  margin-bottom: 40px;
+}
+
+.title{ 
+  -moz-transform: rotate(-9.3deg); 
+  -webkit-transform: rotate(-9.3deg); 
+  margin-left: 130px;
+}
+
+/* Email Style*/
+
+.contentL .formElement{
+  margin: 13px 0px;
+  -moz-transform: rotate(-9.3deg);
+  -webkit-transform: rotate(-9.3deg);  
+}
+
+.contentL .formElement label{
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-right: 200px;
+  margin-left: 75px;
+  font-weight: bold;
+}
+
+.contentL .formElement input[type="text"]{
+  margin-top: 5px;
+  display: block;
+  width: 35%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  text-align: center;
+  margin-left: 360px;
+  position: relative;
+  font-size: 16px;
+}
+
+/* Password Style*/
+
+.contentL .formElement2{
+  -moz-transform: rotate(-9.3deg); 
+  -webkit-transform: rotate(-9.3deg); 
+  margin-top: 35px;
+}
+
+.contentL .formElement2 label{
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-right: 200px;
+  margin-left: 145px;
+  font-weight: bold;
+}
+
+.contentL .formElement2 input[type="password"]{
+  margin-top: 5px;
+  display: block;
+  width: 35%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  text-align: center;
+  margin-left: 376px;
+  position: relative;
+  font-size: 16px;
+}
   
-  .loginD img{
-    width: 80%;
-    height: 80%;
-    margin-top: -200px;
-    display: block;
-  }
-  
-  .contentL{
-    font-family: Arial, Helvetica, sans-serif;
-    position: relative;
-    text-align: center;
-    top: 25%;
-    color: #03572d;
-  }
-  
-  .contentL h2{
-    text-align: center;
-    font-size: 25px;
-    margin-top: -400px;
-  }
-  
-  .contentL .formElement{
-    margin: 13px 0px;
-  }
-  
-  .contentL .formElement label{
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  .contentL .formElement input[type="text"], 
-  .contentL .formElement input[type="password"]{
-    margin-top: 5px;
-    display: block;
-    width: 35%;
-    padding: 10px;
-    outline: none;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-    text-align: center;
-    margin-left: 270px;
-    position: relative;
-  }
 
 
 	

@@ -12,12 +12,9 @@
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="scripts/script.js"></script>
-    <script src="scripts/ikinokotte.js"></script>
-    <script src="scripts/petController.js"></script>
-    <script src="scripts/login.js"></script>
 </head>
 
-<body style="overflow: hidden;">
+<body style="overflow: hidden;" >
   <!--
     <button id="start" onclick="startTest()">Start test</button>
     <div style="visibility:hidden;" class="hide1" id="test">50</div>
@@ -30,30 +27,32 @@
     </div>
   </div>
 
-  <div id="player">
+  <!--<div id="player">
 		<i class="fa fa-volume-down"></i>
 		<div id="volume"></div>
 		<i class="fa fa-volume-up"></i>
-	</div>
+	</div>-->
+
+  <!--Login-->
 
   <div class="loginD">
     <img src="images/loginBox2.png" class="boxL">
     <div class="contentL">
-        <h2>Login</h2>
+      <div class="closeB" onclick="closePopup()">&times;</div>
+        <h2 class="title">Login</h2>
         <div class="formElement">
-            <label for="username"><h4>Username</h4></label>
-            <input type="text" id="username" placeholder="Enter Username">
+            <label for="email">Email</label>
+            <input autocomplete="off" type="text" id="email">
         </div>
-        <div class="formElement">
-            <label for="password"><h4>Password</h4></label>
-            <input type="password" id="password" placeholder="Enter Password">
+        <div class="formElement2">
+            <label for="password">Password</label>
+            <input autocomplete="off" type="password" id="password">
         </div>
         <center><div id="pMsg"></div></center>
-        <div class="formElement">
-            <button onclick="tryLogin()" id="loginBtn" class="buttonDL">Login</button>
+        <div class="formElement3">
+            <button onclick="login()" id="loginBtn" class="buttonDL">Login</button>
     </div>  
   </div>
 
-  <script src="scripts/script.js"></script>
 </body>
 </html>
