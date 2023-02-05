@@ -19,13 +19,13 @@
 </head>
 
 <body style="overflow: hidden;">
-
-    <div id="game">
+    <!--
+        <div id="game">
         <header class="header">
             <div class="petName">Pet's name: DaBaby</div>
             <button class="buttonLogout"><i class="fa fa-sign-out" style="font-size: 25px" aria-hidden="true"></i></button>
         </header>
-        <!-- adicionei esta tag so para testar umas cenas-->
+        adicionei esta tag so para testar umas cenas
         <div class="petThings">
             Name:<div id="name"></div>
             Health:<div id="health"></div>
@@ -47,7 +47,27 @@
     <script>
         createOrLoadPet();
     </script>
-
+    -->
+    <div class="pages">
+        <div id="page1"><button id="id1">asdasd1</button></div>
+        <div id="page2"><button id="id2">asdasd2</button></div>    
+    </div>
+    <script>
+        document.getElementById('id1').addEventListener('click',function() {
+            document.getElementById('page1').classList.add('animate1')
+            document.getElementById('page2').classList.add('animate2')
+            document.getElementById('page1').classList.remove('animate3')
+            document.getElementById('page2').classList.remove('animate4')
+        })
+        document.getElementById('id2').addEventListener('click',function() {
+            document.getElementById('page1').classList.remove('animate1')
+            document.getElementById('page2').classList.remove('animate2')
+            document.getElementById('page1').classList.add('animate3')
+            document.getElementById('page2').classList.add('animate4')
+            
+        })
+    </script>
+    
+    
 </body>
-
 </html>

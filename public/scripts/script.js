@@ -49,3 +49,5 @@ $("#volume").slider({
   var myMedia = document.getElementById('myMedia');
   myMedia.volume = myVolume;
   }*/
+
+  

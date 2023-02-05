@@ -63,3 +63,86 @@
 .petThings{
     margin-top: 200px;
 }
+
+.pages{
+    position: absolute;
+}
+#page1{
+    background-color: aqua;
+    height: 100vh;
+    width: 100vw;
+    margin-left: 0vw;
+}
+#page2{
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    margin-top: -100vh;
+    margin-left: 100vw;
+}
+body{
+    margin: 0;
+}
+.animate1 {
+    animation-duration: 2s;
+    animation-name: move1;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.animate2 {
+    animation-duration: 2s;
+    animation-name: move2;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    
+}
+.animate3 {
+    animation-duration: 2s;
+    animation-name: move3;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.animate4 {
+    animation-duration: 2s;
+    animation-name: move4;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    
+}
+
+
+@keyframes move1 {
+    0% {
+        margin-left: 0vw;
+    }
+    100% {
+        margin-left: -100vw;
+    }
+}
+@keyframes move2 {
+    0% {
+        margin-left: 100vw;
+    }
+    100% {
+        margin-left: 0vw;
+    }
+}
+@keyframes move3 {
+    0% {
+        margin-left: -100vw;
+    }
+    100% {
+        margin-left: 0vw;
+    }
+}
+@keyframes move4 {
+    0% {
+        margin-left: 0vw;
+    }
+    100% {
+        margin-left: 100vw;
+    }
+}
+
