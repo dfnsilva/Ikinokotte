@@ -4,9 +4,9 @@
         "name": "Test1",
         "birth": 0,
         "age": 0,
-        "health": 98,
-        "food": 103,
-        "water": 98,
-        "mood": 57
+        "health": 100,
+        "food": 138,
+        "water": 65,
+        "mood": 80
     }
 ]

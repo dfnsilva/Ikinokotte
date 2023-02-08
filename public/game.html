@@ -16,41 +16,47 @@
     <script src="scripts/ikinokotte.js"></script>
     <script src="scripts/petController.js"></script>
     <script src="scripts/login.js"></script>
+    <script src="scripts/script.js"></script>
 </head>
 
 <body style="overflow: hidden;">
     <!--
-        <div id="game">
-        <header class="header">
-            <div class="petName">Pet's name: DaBaby</div>
-            <button class="buttonLogout"><i class="fa fa-sign-out" style="font-size: 25px" aria-hidden="true"></i></button>
-        </header>
-        adicionei esta tag so para testar umas cenas
-        <div class="petThings">
-            Name:<div id="name"></div>
-            Health:<div id="health"></div>
-            Food:<div id="food"></div>
-            Water:<div id="water"></div>
-            Mood:<div id="mood"></div>
-        </div>
-        <footer class="footer">
-            <div class="gameButton">
-                <button onclick="startPet()" class="buttonAction">Start</button>
-                <button onclick="giveWater()" class="buttonAction">Water</button>
-                <button onclick="giveFood()" class="buttonAction">food</button>
-                <button onclick="playPet()" class="buttonAction">play</button>
-                <button onclick="savePetToDB()" class="buttonAction">S</button>
-                <button onclick="checkSavedPet()" class="buttonAction">G</button>
-            </div>
-        </footer>
-    </div>
-    <script>
-        createOrLoadPet();
-    </script>
+        
     -->
     <div class="pages">
-        <div id="page1"><button id="id1">asdasd1</button></div>
-        <div id="page2"><button id="id2">asdasd2</button></div>    
+        <div id="page1">
+            <button id="id1">asdasd1</button>
+        </div>
+        <div id="page2">
+            <div id="game">
+                <header class="header">
+                    <div class="petName">Pet's name: DaBaby</div>
+                    <button class="buttonLogout" id="id2"><i class="fa fa-sign-out" style="font-size: 25px" aria-hidden="true"></i></button>
+                </header>
+                adicionei esta tag so para testar umas cenas
+                <div class="petThings">
+                    Name:<div id="name"></div>
+                    Health:<div id="health"></div>
+                    Food:<div id="food"></div>
+                    Water:<div id="water"></div>
+                    Mood:<div id="mood"></div>
+                </div>
+                <footer class="footer">
+                    <div class="gameButton">
+                        <button onclick="startPet()" class="buttonAction">Start</button>
+                        <button onclick="giveWater()" class="buttonAction">Water</button>
+                        <button onclick="giveFood()" class="buttonAction">food</button>
+                        <button onclick="playPet()" class="buttonAction">play</button>
+                        <button onclick="savePetToDB()" class="buttonAction">S</button>
+                        <button onclick="checkSavedPet()" class="buttonAction">G</button>
+                    </div>
+                </footer>
+            </div>
+            <script>
+                createOrLoadPet();
+            </script>
+        
+        </div>    
     </div>
     <script>
         document.getElementById('id1').addEventListener('click',function() {
