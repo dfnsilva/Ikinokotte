@@ -13,6 +13,18 @@ function alterMood(){
 function alterName(){
     document.getElementById("name").innerHTML = myPet.name
 }
+function scrollRight(){
+    document.getElementById('page1').classList.add('animate1')
+    document.getElementById('page2').classList.add('animate2')
+    document.getElementById('page1').classList.remove('animate3')
+    document.getElementById('page2').classList.remove('animate4')
+}
+function scrollLeft(){
+    document.getElementById('page1').classList.add('animate1')
+    document.getElementById('page2').classList.add('animate2')
+    document.getElementById('page1').classList.remove('animate3')
+    document.getElementById('page2').classList.remove('animate4')
+}
 /*
 Name:<div id="name"></div>
             Health:<div id="health"></div>

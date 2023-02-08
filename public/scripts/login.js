@@ -1,5 +1,4 @@
 
-
 async function tryLogin(){
     const email = document.getElementById("username").value;
     const password = document.getElementById("password").value;
@@ -42,10 +41,14 @@ function successLogin(json){
     console.log(json.id)
     localStorage.setItem("userId",json.id)
     console.log("nice login")
+    scrollRight()
+    createOrLoadPet()
+    
 }
+
 function failedLogin(json){
-    alert(json.msg)
     console.log("bad login")
+    document.getElementById("pMsg").innerHTML = json.msg;
     document.getElementById("password").value = "";
 }
 

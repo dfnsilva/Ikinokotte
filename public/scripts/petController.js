@@ -109,7 +109,7 @@ function loadPetFromCookie() {
 
 function createOrLoadPet(){
     //makeThingsAppear()
-    myPet =loadPetFromCookie()
+    pet =loadPetFromCookie()
     if(myPet == null){
         console.log("no cookie");
         myPet = newPet("Test1","admin");
