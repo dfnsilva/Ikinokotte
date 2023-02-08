@@ -39,11 +39,10 @@
     padding:1%;
     bottom: 0;
     left: 0;
-    position: fixed;
+    position: absolute;
     background-color: #557153;
     width: 100%;
     color: whitesmoke;
-    position: relative;
 }
 
 .header {
@@ -52,7 +51,6 @@
     padding:1%;
     top: 0;
     left: 0;
-    position: fixed;
     background-color: #557153;
     width: 100%;
     color: whitesmoke;
@@ -81,6 +79,7 @@
     width: 100vw;
     margin-top: -100vh;
     margin-left: 100vw;
+    position: relative;
 }
 body{
     margin: 0;

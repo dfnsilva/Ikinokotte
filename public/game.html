@@ -30,12 +30,11 @@
         <div id="page2">
             <div id="game">
                 <header class="header">
-                    <div class="petName">Pet's name: DaBaby</div>
+                    <div class="petName">Pet's name: <div id="name" style="display: inline;"></div></div>
                     <button class="buttonLogout" id="id2"><i class="fa fa-sign-out" style="font-size: 25px" aria-hidden="true"></i></button>
                 </header>
                 adicionei esta tag so para testar umas cenas
                 <div class="petThings">
-                    Name:<div id="name"></div>
                     Health:<div id="health"></div>
                     Food:<div id="food"></div>
                     Water:<div id="water"></div>
@@ -43,7 +42,6 @@
                 </div>
                 <footer class="footer">
                     <div class="gameButton">
-                        <button onclick="startPet()" class="buttonAction">Start</button>
                         <button onclick="giveWater()" class="buttonAction">Water</button>
                         <button onclick="giveFood()" class="buttonAction">food</button>
                         <button onclick="playPet()" class="buttonAction">play</button>
