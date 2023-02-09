@@ -102,10 +102,10 @@ app.get("/getSavedPet/:name", (req, res) => {
 app.post("/savePet", (req, res) => {
     const savePet = req.body;
     if(!userHasPet(req.body.owner)){
-        pets.push(pet);
+        pets.push(savePet);
         writeToDB("./db/pets.json", pets);
         return res.status(201).send({
-            msg: `New Pet created`
+            msg: `New Pet Save Created`
         });
     }else{
         console.log(req.body)
@@ -114,7 +114,6 @@ app.post("/savePet", (req, res) => {
                 pet=savePet;
             }
         }
-        pets = []
         console.log(req.body)
         pets.push(pet);
         writeToDB("./db/pets.json", pets);

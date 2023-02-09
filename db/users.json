@@ -3,6 +3,10 @@
         "username": "admin",
         "password": "admin",
         "petHistory": "inWork"
+    },
+    {
+        "username": "banana",
+        "password": "banana",
+        "petHistory": "inWork"
     }
-
 ]
