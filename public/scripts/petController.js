@@ -1,9 +1,10 @@
 
 let myPet;
+let owner;
 let UHintervalId;
 let URintervalId;
-function newPet(name,ownderId){
-    return new ikinokotte(name,ownderId);
+function newPet(name,ownderName){
+    return new ikinokotte(name,ownderName);
 }
 
 function age(){
@@ -83,19 +84,18 @@ function playPet(){
 
 function savePetToCookie(cookiename,object) {
     const objJson = JSON.stringify(object);
-    console.log(objJson)
     document.cookie = `${cookiename}=${objJson};max-age=31536000`; // one year
 }
 
-function loadPetFromCookie() {
+function loadPetFromCookie(cookiename) {
     const cookies = document.cookie.split(';');
     let petJSON;
     for (let i = 0; i < cookies.length; i++) {
         const cookie = cookies[i].trim();
-        if (cookie.startsWith('ikinokotte=')) {
-            console.log (cookie.substring(11));
-            petJSON = cookie.substring(11);
-            console.log(petJSON)
+        console.log(cookie)
+        if (cookie.startsWith(`${cookiename}=`)) {
+            console.log (cookie);
+            petJSON = cookie.split('=')[1];
             break;
         }
     }
@@ -109,11 +109,11 @@ function loadPetFromCookie() {
 
 function createOrLoadPet(){
     //makeThingsAppear()
-    pet =loadPetFromCookie()
+    myPet =loadPetFromCookie(loggedUser+'ikinokotte')
     if(myPet == null){
         console.log("no cookie");
-        myPet = newPet("Test1","admin");
-        savePetToCookie('ikinokotte',myPet)
+        myPet = newPet("Test1",loggedUser);
+        savePetToCookie(loggedUser+'ikinokotte',myPet)
     }else{
         console.log('yes cookie')
         console.log(myPet)
@@ -121,9 +121,7 @@ function createOrLoadPet(){
     startPet()
 }
 async function checkSavedPet(){
-    //var ownerId = localStorage.getItem("userId")
-    var owner = "admin";
-    const response = await makeRequest("http://localhost:8080/getSavedPet/"+owner, {
+    const response = await makeRequest("http://localhost:8080/getSavedPet/"+loggedUser, {
         method: "GET",
         headers: { "Content-type": "application/json; charset=UTF-8" },
     });
@@ -133,6 +131,7 @@ async function checkSavedPet(){
     petJSON = json.pet
     console.log(petJSON)
     myPet = petJSON
+    startPet()
 }
 async function savePetToDB(){
     //var ownerId = localStorage.getItem("userId")
@@ -151,6 +150,10 @@ function startPet(){
     updateScreen();
     updateHealth();
     updateResources();
+}
+function stopPet(){
+    clearInterval(UHintervalId);
+    clearInterval(URintervalId);
 }
 // Update the ikinokotte's health every minute
 function updateScreen(){
@@ -191,6 +194,7 @@ async function updateResources(){
 
         clampAllVariables();
         updateScreen()
+        savePetToCookie(loggedUser+'ikinokotte',myPet)
       }, 2500);//CHANGE TO REAL TIME
 
 }
@@ -237,6 +241,7 @@ async function updateHealth(){
           clearInterval(URintervalId);
           //send to server the notice
         }
+        savePetToCookie(loggedUser+'ikinokotte',myPet)
       }, 5000);//CHANGE TO REAL TIME
 }
 

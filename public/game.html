@@ -52,7 +52,7 @@
             <div id="game">
                 <header class="header">
                     <div class="petName">Pet's name: <div id="name" style="display: inline;"></div></div>
-                    <button class="buttonLogout" id="id2"><i class="fa fa-sign-out" style="font-size: 25px" aria-hidden="true"></i></button>
+                    <button class="buttonLogout" onclick="logout()" id="id2"><i class="fa fa-sign-out" style="font-size: 25px" aria-hidden="true"></i></button>
                 </header>
                 adicionei esta tag so para testar umas cenas
                 <div class="petThings">
@@ -66,8 +66,8 @@
                         <button onclick="giveWater()" class="buttonAction">Water</button>
                         <button onclick="giveFood()" class="buttonAction">food</button>
                         <button onclick="playPet()" class="buttonAction">play</button>
-                        <button onclick="savePetToDB()" class="buttonAction">S</button>
-                        <button onclick="checkSavedPet()" class="buttonAction">G</button>
+                        <button onclick="savePetToDB()" class="buttonAction">Save</button>
+                        <button onclick="checkSavedPet()" class="buttonAction">load</button>
                     </div>
                 </footer>
             </div>

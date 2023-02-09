@@ -41,13 +41,13 @@ app.post("/signUp", (req, res) => {
 
 app.post("/login", (req, res) => {
     console.log(req.body)
-    const nome = req.body.username;
+    const name = req.body.username;
     const senha = req.body.password;
     for (user of users) {
-        if (user.username === nome)
+        if (user.username === name)
             if (user.password === senha) {
                 return res.status(201).json({
-                    name: user.name,
+                    user: user.username,
                     petHistory:user.petHistory })
             } else {
                 return res.status(401).json({ msg: "Invalid Password!" })

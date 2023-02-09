@@ -1,45 +1,45 @@
-
+//if(localStorage.getItem("loggedUser")!=null)
+let loggedUser;
 async function tryLogin(){
-    const email = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-    const user = {
-        username: email,
-        password: password,
-    };
-    console.log(user)
-    const response = await makeRequest("http://localhost:8080/login", {
-        method: "POST",
-        body: JSON.stringify(user),
-        headers: { "Content-type": "application/json; charset=UTF-8" },
-    });
-    json = await response.json();
-    switch (response.status) {
-        case 201:
-            {
-                // login ok
-                successLogin(json);
-                break;
-            }
-        case 401:
-            {
-                // Password error
-                failedLogin(json)
-                break;
-            }
-        case 404:
-            {
-                // No user
-                failedLogin(json)
-                break;
-            }
+    console.log(loggedUser)
+    if(loggedUser == null){
+        const email = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const user = {
+            username: email,
+            password: password,
+        };
+        const response = await makeRequest("http://localhost:8080/login", {
+            method: "POST",
+            body: JSON.stringify(user),
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+        });
+        json = await response.json();
+        switch (response.status) {
+            case 201:
+                {
+                    // login ok
+                    successLogin(json);
+                    break;
+                }
+            case 401:
+                {
+                    // Password error
+                    failedLogin(json)
+                    break;
+                }
+            case 404:
+                {
+                    // No user
+                    failedLogin(json)
+                    break;
+                }
+        }
     }
 }
 function successLogin(json){
-    //document.getElementById('showLogin').style.opacity = 0
-    //change to other screen
-    //load pet
-    console.log(json.id)
-    localStorage.setItem("userId",json.id)
+    console.log(json.user)
+    loggedUser = json.user
     console.log("nice login")
     scrollRight()
     createOrLoadPet()
@@ -50,6 +50,11 @@ function failedLogin(json){
     console.log("bad login")
     document.getElementById("pMsg").innerHTML = json.msg;
     document.getElementById("password").value = "";
+}
+
+function logout(){
+    stopPet()
+    loggedUser=null;
 }
 
 
