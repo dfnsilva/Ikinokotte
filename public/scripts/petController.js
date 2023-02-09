@@ -125,6 +125,7 @@ async function checkSavedPet(){
         method: "GET",
         headers: { "Content-type": "application/json; charset=UTF-8" },
     });
+    stopPet()
     json = await response.json();
     alert(json.msg);
     console.log(json.pet)
