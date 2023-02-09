@@ -1,30 +1,132 @@
 function alterHealth(){
+    if(myPet.health < 20){
+        document.getElementById('healthBar').classList.remove('yellow')
+        document.getElementById('healthBar').classList.remove('blue')
+        document.getElementById('healthBar').classList.add('red')
+    }else if(myPet.health >= 20 && myPet.health <= 50) {
+        document.getElementById('healthBar').classList.add('yellow')
+        document.getElementById('healthBar').classList.remove('blue')
+        document.getElementById('healthBar').classList.remove('red')
+    }else{
+        document.getElementById('healthBar').classList.remove('yellow')
+        document.getElementById('healthBar').classList.add('blue')
+        document.getElementById('healthBar').classList.remove('red')
+    }
     document.getElementById("health").innerHTML = myPet.health
+    document.getElementById("healthBar").style.width = `${myPet.health}%`
 }
+
 function alterFood(){
+    if(myPet.food < 20){
+        document.getElementById('foodBar').classList.remove('yellow')
+        document.getElementById('foodBar').classList.remove('blue')
+        document.getElementById('foodBar').classList.add('red')
+    }else if((myPet.food>=20 && myPet.food<70)){
+        document.getElementById('foodBar').classList.add('yellow')
+        document.getElementById('foodBar').classList.remove('blue')
+        document.getElementById('foodBar').classList.remove('red')
+    }else if(myPet.food>=70 && myPet.food<=140){
+        document.getElementById('foodBar').classList.remove('yellow')
+        document.getElementById('foodBar').classList.add('blue')
+        document.getElementById('foodBar').classList.remove('red')
+    }else if((myPet.food>140 && myPet.food<=180)){
+        document.getElementById('foodBar').classList.add('yellow')
+        document.getElementById('foodBar').classList.remove('blue')
+        document.getElementById('foodBar').classList.remove('red')
+    }else{
+        document.getElementById('foodBar').classList.remove('blue')
+        document.getElementById('foodBar').classList.remove('yellow')
+        document.getElementById('foodBar').classList.add('red')
+    }
     document.getElementById("food").innerHTML = myPet.food
+    document.getElementById("foodBar").style.width = `${myPet.food/2}%`
 }
+
 function alterWater(){
+    if(myPet.water <40){
+        document.getElementById('waterBar').classList.remove('yellow')
+        document.getElementById('waterBar').classList.remove('blue')
+        document.getElementById('waterBar').classList.add('red')
+    }else if(myPet.water>=40 && myPet.water<80){
+        document.getElementById('waterBar').classList.add('yellow')
+        document.getElementById('waterBar').classList.remove('blue')
+        document.getElementById('waterBar').classList.remove('red')
+    }else{
+        document.getElementById('waterBar').classList.remove('yellow')
+        document.getElementById('waterBar').classList.add('blue')
+        document.getElementById('waterBar').classList.remove('red')
+    }
     document.getElementById("water").innerHTML = myPet.water
+    document.getElementById("waterBar").style.width = `${myPet.water}%`
 }
+
 function alterMood(){
+    if(myPet.mood <0){
+        document.getElementById('moodBar').classList.remove('yellow')
+        document.getElementById('moodBar').classList.remove('blue')
+        document.getElementById('moodBar').classList.add('red')
+    }else if(myPet.mood <=80){
+        document.getElementById('moodBar').classList.add('yellow')
+        document.getElementById('moodBar').classList.remove('blue')
+        document.getElementById('moodBar').classList.remove('red')
+    }else{
+        document.getElementById('moodBar').classList.remove('yellow')
+        document.getElementById('moodBar').classList.add('blue')
+        document.getElementById('moodBar').classList.remove('red')
+    }
     document.getElementById("mood").innerHTML = myPet.mood
+    document.getElementById("moodBar").style.width = `${(myPet.mood+100)/2}%`
 }
+
 function alterName(){
     document.getElementById("name").innerHTML = myPet.name
 }
+
 function scrollRight(){
     document.getElementById('page1').classList.add('animate1')
     document.getElementById('page2').classList.add('animate2')
     document.getElementById('page1').classList.remove('animate3')
     document.getElementById('page2').classList.remove('animate4')
 }
+
 function scrollLeft(){
     document.getElementById('page1').classList.add('animate1')
     document.getElementById('page2').classList.add('animate2')
     document.getElementById('page1').classList.remove('animate3')
     document.getElementById('page2').classList.remove('animate4')
 }
+
+/*
+if(myPet.food <20){
+            myPet.health-=10;
+        }else if((myPet.food>=20 && myPet.food<70) ){
+            myPet.health-=2;
+        }else if((myPet.food>=70 && myPet.food<140)){
+            myPet.health+=2;
+        }else if((myPet.food>=140 && myPet.food<=180)){
+            myPet.health-=1;
+        }else if( myPet.food > 180){
+            myPet.health-=4;
+        }
+
+        if(myPet.water <40){
+            myPet.health-=2;
+        }else if(myPet.water>=40 && myPet.water<80){
+            myPet.health+=1;
+        }else{
+            myPet.health-=1;
+        }
+
+        
+        if(myPet.mood <0){
+            myPet.health-=1;
+        }else if(myPet.mood <=80){
+            myPet.health+=1;
+        }else{
+            myPet.health+=2;
+        }
+*/ 
+
 /*
 Name:<div id="name"></div>
             Health:<div id="health"></div>
