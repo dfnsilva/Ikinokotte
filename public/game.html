@@ -42,6 +42,7 @@
                         <div class="formElement3">
                             
                             <button onclick="tryLogin()" id="loginBtn" class="buttonDL">Login</button>
+                            <button onclick="trySignUp()" class="buttonDL">signup</button>
                         </div> 
                         
                     </div>
@@ -53,19 +54,30 @@
                     <div class="petName">Pet's name: <div id="name" style="display: inline;"></div></div>
                     <button class="buttonLogout" onclick="logout()" id="id2"><i class="fa fa-sign-out" style="font-size: 25px" aria-hidden="true"></i></button>
                 </header>
-                adicionei esta tag so para testar umas cenas
-                <div class="petThings">
-                    <div class="grey round">
-                        <div id="healthBar" class="bars round blue" style="width:100%"><div id="health"></div></div>
+                <div id ="newPetPopup" style="visibility:visible; border-style: groove; border-radius: 10px ; margin: 10px; background-color: darkgray; color: whitesmoke;" >
+                    <div class="formElement">
+                        <label for="username">Email</label>
+                        <input autocomplete="off" type="text" id="petName">
                     </div>
+                    <div id = "petMessage">******************</div>
+                    <button id="createNewPet" style="border-radius: 10px ;"onclick="createNewPet()">NewPet</button>
+                </div>
+                <div class="petThings" style="visibility: hidden;">
+                    health:<div id="health" style="display: inline;"></div>
                     <div class="grey round">
-                        <div id="foodBar" class="bars round blue" style="width:100%"><div id="food"></div></div>
+                        <div id="healthBar" class="bars round blue" style="width:100%">| </div>
                     </div>
+                    food:<div id="food" style="display: inline;"></div>
                     <div class="grey round">
-                        <div id="waterBar" class="bars round blue" style="width:100%"><div id="water"></div></div>
+                        <div id="foodBar" class="bars round blue" style="width:100%">|  </div>
                     </div>
+                    water:<div id="water" style="display: inline;"></div>
                     <div class="grey round">
-                        <div id="moodBar" class="bars round blue" style="width:100%"><div id="mood"></div></div>
+                        <div id="waterBar" class="bars round blue" style="width:100%">|</div>
+                    </div>
+                    mood:<div id="mood" style="display: inline;"></div>
+                    <div class="grey round">
+                        <div id="moodBar" class="bars round blue" style="width:100%">|</div>
                     </div>
                 </div>
                 <footer class="footer">
@@ -88,6 +100,10 @@
             document.getElementById('page2').classList.add('animate4')
             
         })
+        if (isLogged()){
+            
+            successLogin(getCookie("loggedUser"),getCookie("loggedUserPetHistory"))
+        }
     </script>
     
     

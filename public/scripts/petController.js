@@ -18,7 +18,6 @@ function clampAllVariables(){
 }
 function giveWater(){
     waterType="normal";
-    console.log(`${myPet.water} drink`);
     switch(waterType){
         case "normal":
             myPet.water += 5;
@@ -35,11 +34,9 @@ function giveWater(){
     }
     clampAllVariables()
     alterWater();
-    console.log(`${myPet.water} drink`);
 }
 function giveFood(){
     foodType="bread";
-    console.log(`${myPet.food} food`);
     switch(foodType){
         case "bread":
             myPet.food += 5;
@@ -55,11 +52,9 @@ function giveFood(){
     }
     clampAllVariables()
     alterFood();
-    console.log(`${myPet.food} food`);
 }
 function playPet(){
     playType="normal";
-    console.log(`${myPet.mood} mood`);
     switch(playType){
         case "normal":
             myPet.mood += 10;
@@ -79,7 +74,6 @@ function playPet(){
     
     clampAllVariables()
     alterMood();
-    console.log(`${myPet.mood} mood`);
 }
 
 function savePetToCookie(cookiename,object) {
@@ -92,9 +86,7 @@ function loadPetFromCookie(cookiename) {
     let petJSON;
     for (let i = 0; i < cookies.length; i++) {
         const cookie = cookies[i].trim();
-        console.log(cookie)
         if (cookie.startsWith(`${cookiename}=`)) {
-            console.log (cookie);
             petJSON = cookie.split('=')[1];
             break;
         }
@@ -107,17 +99,28 @@ function loadPetFromCookie(cookiename) {
     }
 }
 
-function createOrLoadPet(){
+function afterLogin(){
     //makeThingsAppear()
     myPet =loadPetFromCookie(loggedUser+'ikinokotte')
     if(myPet == null){
-        console.log("no cookie");
-        myPet = newPet("Test1",loggedUser);
-        savePetToCookie(loggedUser+'ikinokotte',myPet)
+        createNewPetMessage("show");
     }else{
-        console.log('yes cookie')
-        console.log(myPet)
+        createNewPetMessage("hide");
+        petElementsVisibility("show")
+        setTimeout(fancyStatsAnim("appear"),100);
+        startPet()
     }
+}
+function createNewPet(){
+    petName = document.getElementById("petName").value
+    console.log(petName)
+    console.log(document.getElementById("petName").value)
+    myPet = newPet(petName,loggedUser);
+    console.log(myPet)
+    createNewPetMessage("hide");
+    savePetToCookie(loggedUser+'ikinokotte',myPet)
+    petElementsVisibility("show")
+    setTimeout(fancyStatsAnim("appear"),100);
     startPet()
 }
 async function checkSavedPet(){
@@ -135,8 +138,7 @@ async function checkSavedPet(){
     startPet()
 }
 async function savePetToDB(){
-    //var ownerId = localStorage.getItem("userId")
-    console.log(JSON.stringify(myPet));
+
     const response = await makeRequest("http://localhost:8080/savePet", {
         method: "POST",
         body: JSON.stringify(myPet),
@@ -234,15 +236,14 @@ async function updateHealth(){
         }
 
         myPet.health = Math.min(Math.max(myPet.health, 0), 100);
-        
-        console.log(`${myPet.health} health1.`)
 
         alterHealth();
         if (myPet.health <= 0) {
-          console.log(`${myPet.name} has died.`);
-          clearInterval(UHintervalId);
-          clearInterval(URintervalId);
-          //send to server the notice
+            showPetDeadMessage(myPet.name)
+            setTimeout(fancyStatsAnim("disappear"),100);
+            clearInterval(UHintervalId);
+            clearInterval(URintervalId);
+            //send to server the notice
         }
         savePetToCookie(loggedUser+'ikinokotte',myPet)
       }, 5000);//CHANGE TO REAL TIME

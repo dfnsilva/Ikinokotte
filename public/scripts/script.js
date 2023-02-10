@@ -75,7 +75,8 @@ function alterMood(){
         document.getElementById('moodBar').classList.remove('red')
     }
     document.getElementById("mood").innerHTML = myPet.mood
-    document.getElementById("moodBar").style.width = `${(myPet.mood+100)/2}%`
+    console.log(`${(myPet.mood+100)/2}%`)
+    document.getElementById("moodBar").style.width = `${(myPet.mood+100.1)/2}%`
 }
 
 function alterName(){
@@ -87,6 +88,7 @@ function scrollRight(){
     document.getElementById('page2').classList.add('animate2')
     document.getElementById('page1').classList.remove('animate3')
     document.getElementById('page2').classList.remove('animate4')
+
 }
 
 function scrollLeft(){
@@ -94,7 +96,60 @@ function scrollLeft(){
     document.getElementById('page2').classList.add('animate2')
     document.getElementById('page1').classList.remove('animate3')
     document.getElementById('page2').classList.remove('animate4')
+
 }
+function getOutOfMyWay(status){
+    var elements = document.getElementsByClassName("loginD");
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.visibility = status;
+        }
+}
+function showPetDeadMessage(name){
+    document.getElementById("newPetPopup").style.visibility = "visible"
+    document.getElementById("petMessage").innerHTML = name+" pet has died "
+}
+function createNewPetMessage(show){
+    
+    if(show=="show"){
+        document.getElementById("newPetPopup").style.visibility = "visible"
+    }else{
+        document.getElementById("newPetPopup").style.visibility = "hidden"
+    }
+}
+
+function petElementsVisibility(show){
+    if(show=="show"){
+        var elements = document.getElementsByClassName("petThings");
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.visibility = "visible";
+        }
+    }else{
+        var elements = document.getElementsByClassName("petThings");
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.visibility = "hidden";
+        }
+    }
+    
+}
+function fancyStatsAnim(appear){
+    if(appear=="appear"){
+        var elements = document.getElementsByClassName("petThings");
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.opacity = "0";
+            elements[i].classList.add('fancyAnimationAppear')
+            elements[i].classList.remove('fancyAnimationDisappear')
+        }
+    }else{
+        console.log("disappear")
+        var elements = document.getElementsByClassName("petThings");
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.opacity = "1";
+            elements[i].classList.remove('fancyAnimationAppear')
+            elements[i].classList.add('fancyAnimationDisappear')
+        }
+    }
+}
+
 
 /*
 if(myPet.food <20){

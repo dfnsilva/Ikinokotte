@@ -8,5 +8,15 @@
         "username": "banana",
         "password": "12345",
         "petHistory": "inWork"
+    },
+    {
+        "username": "newuser",
+        "password": "newuser",
+        "petHistory": "tbd"
+    },
+    {
+        "username": "newuser1",
+        "password": "password1",
+        "petHistory": "tbd"
     }
 ]

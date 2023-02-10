@@ -1,13 +1,13 @@
 [
     {
         "owner": "admin",
-        "name": "Test1",
+        "name": "adminPet",
         "birth": 0,
         "age": 0,
-        "health": 100,
-        "food": 57,
-        "water": 35,
-        "mood": 95
+        "health": 7,
+        "food": 0,
+        "water": 0,
+        "mood": -100
     },
     {
         "owner": "banana",
@@ -18,5 +18,15 @@
         "food": 20,
         "water": 71,
         "mood": 45
+    },
+    {
+        "owner": "newuser",
+        "name": "Test1",
+        "birth": 0,
+        "age": 0,
+        "health": 100,
+        "food": 170,
+        "water": 73,
+        "mood": 74
     }
 ]
