@@ -4,29 +4,19 @@
         "name": "Test1",
         "birth": 0,
         "age": 0,
-        "health": 64,
-        "food": 0,
-        "water": 51,
-        "mood": -49
+        "health": 100,
+        "food": 57,
+        "water": 35,
+        "mood": 95
     },
     {
-        "owner": "admin",
+        "owner": "banana",
         "name": "Test1",
         "birth": 0,
         "age": 0,
-        "health": 55,
-        "food": 137,
-        "water": 93,
-        "mood": 41
-    },
-    {
-        "owner": "admin",
-        "name": "Test1",
-        "birth": 0,
-        "age": 0,
-        "health": 66,
-        "food": 106,
-        "water": 88,
-        "mood": 74
+        "health": 100,
+        "food": 20,
+        "water": 71,
+        "mood": 45
     }
 ]

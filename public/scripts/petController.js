@@ -169,9 +169,11 @@ async function updateResources(){
             myPet.food-=5;
             myPet.mood-=10;
         }else if((myPet.food>=20 && myPet.food<70)){
-            myPet.food-=3;
-        }else if((myPet.food>140 && myPet.food<=180)){
+            myPet.food-=4;
+        }else if((myPet.food>=70 && myPet.food<140)){
             myPet.food-=2;
+        }else if((myPet.food>140 && myPet.food<=180)){
+            myPet.food-=1;
         }else{
             myPet.food-=1;
             myPet.mood-=10;

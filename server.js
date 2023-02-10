@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 let users = require('./db/users');
 let pets = require('./db/pets');
+const { count } = require("console");
 
 app.post("/signUp", (req, res) => {
     const username = req.body.username;
@@ -62,18 +63,18 @@ app.post("/login", (req, res) => {
 app.delete("/deleteProd/:name", (req, res) => {
     const name= req.params.name;
     let dbAux = [];
-    for (prod of products){
+    for (prod of pets){
         if (prod.name == name) {
             result=prod;
         }else{
             dbAux.push(prod);
         }
     }
-    products = [];
+    pets = [];
     for (let i = 0; i < dbAux.length; i++) {
-        products.push(dbAux[i]); // copia os dados
+        pets.push(dbAux[i]); // copia os dados
     }
-    writeToDB("./db/products.json", products);
+    writeToDB("./db/pets.json", pets);
     return res.status(201).send({
         msg: `Product deleted`
     });
@@ -109,13 +110,19 @@ app.post("/savePet", (req, res) => {
         });
     }else{
         console.log(req.body)
+        let dbAux = [];
         for (pet of pets){
             if (pet.owner == savePet.owner) {
-                pet=savePet;
+                dbAux.push(savePet);
+            }else{
+                dbAux.push(pet);
             }
         }
-        console.log(req.body)
-        pets.push(pet);
+        pets = [];
+        for (pet of dbAux){
+            pets.push(pet); // copia os dados
+        }
+        console.log(pets)
         writeToDB("./db/pets.json", pets);
         return res.status(201).send({
             msg: `Pet Saved`
