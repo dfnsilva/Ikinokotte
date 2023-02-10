@@ -15,9 +15,9 @@
         "birth": 0,
         "age": 0,
         "health": 100,
-        "food": 20,
-        "water": 71,
-        "mood": 45
+        "food": 94,
+        "water": 67,
+        "mood": 59
     },
     {
         "owner": "newuser",
@@ -28,5 +28,15 @@
         "food": 170,
         "water": 73,
         "mood": 74
+    },
+    {
+        "owner": "papa",
+        "name": "Abacate",
+        "birth": 0,
+        "age": 0,
+        "health": 100,
+        "food": 155,
+        "water": 50,
+        "mood": 100
     }
 ]

@@ -2,12 +2,12 @@
     {
         "username": "admin",
         "password": "admin",
-        "petHistory": "inWork"
+        "petHistory": "tbd"
     },
     {
         "username": "banana",
         "password": "12345",
-        "petHistory": "inWork"
+        "petHistory": "tbd"
     },
     {
         "username": "newuser",
@@ -17,6 +17,11 @@
     {
         "username": "newuser1",
         "password": "password1",
+        "petHistory": "tbd"
+    },
+    {
+        "username": "papa",
+        "password": "papa1",
         "petHistory": "tbd"
     }
 ]
