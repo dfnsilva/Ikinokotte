@@ -1,6 +1,7 @@
-body {
+.mainbody {
     background-color: #DAE2B6;
     font-family: Arial;
+    line-height: 1;
 }
 
 img {

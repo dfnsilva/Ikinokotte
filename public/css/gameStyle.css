@@ -40,7 +40,7 @@
     bottom: 0;
     left: 0;
     position: absolute;
-    background-color: #557153;
+    background-color: #5e5e5e;
     width: 100%;
     color: whitesmoke;
 }
@@ -51,10 +51,11 @@
     padding:1%;
     top: 0;
     left: 0;
-    background-color: #557153;
+    background-color: #5e5e5e;
     width: 100%;
     color: whitesmoke;
     position: relative;
+    border-image-repeat: stretch;
 }
 
 .petName {
