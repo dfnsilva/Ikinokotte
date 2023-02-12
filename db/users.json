@@ -2,26 +2,26 @@
     {
         "username": "admin",
         "password": "admin",
-        "petHistory": "tbd"
+        "petHistory": "owner=admin,name=my pet,birth=0,age=0,food=0,water=0,mood=-100;owner=admin,name=adminPet2,birth=2023-1-0,age=NaNyears Old,food=0,water=0,mood=-100;owner=admin,name=ad,birth=2023-1-0,age=NaNyears Old,food=0,water=19,mood=-100;owner=admin,name=ad,birth=2023-1-0,age=NaNyears Old,food=0,water=15,mood=-100;owner=admin,name=ad,birth=2023-1-0,age=NaNyears Old,food=0,water=23,mood=-100;owner=admin,name=adminPet,birth=2022-02-23,age=11.6months Old,food=0,water=23,mood=-100;owner=admin,name=asg,birth=2023-2-12,age=55.5Mins Old,food=0,water=23,mood=-100;owner=admin,name=asg,birth=2023-2-12,age=56.8Mins Old,food=0,water=23,mood=-100;"
     },
     {
         "username": "banana",
         "password": "12345",
-        "petHistory": "tbd"
+        "petHistory": ""
     },
     {
         "username": "newuser",
         "password": "newuser",
-        "petHistory": "tbd"
+        "petHistory": "owner=newuser,name=asdf,birth=2023-02-23,age=-15791.5Mins Old,food=0,water=23,mood=-100;"
     },
     {
         "username": "newuser1",
         "password": "password1",
-        "petHistory": "tbd"
+        "petHistory": "owner=newuser1,name=asd,birth=2023-02-23,age=NaNyears Old,food=0,water=23,mood=-100;"
     },
     {
         "username": "papa",
         "password": "papa1",
-        "petHistory": "tbd"
+        "petHistory": ""
     }
 ]

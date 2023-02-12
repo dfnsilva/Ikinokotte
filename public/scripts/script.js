@@ -75,7 +75,6 @@ function alterMood(){
         document.getElementById('moodBar').classList.remove('red')
     }
     document.getElementById("mood").innerHTML = myPet.mood
-    console.log(`${(myPet.mood+100)/2}%`)
     document.getElementById("moodBar").style.width = `${(myPet.mood+100.1)/2}%`
 }
 

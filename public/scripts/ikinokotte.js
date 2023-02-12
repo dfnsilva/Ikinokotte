@@ -6,7 +6,8 @@ class ikinokotte {
     constructor(name,owner) {
         this.owner = owner;
         this.name = name;
-        this.birth = 0;
+        this.birth = new Date();
+        this.lastVisited = new Date();
         this.age = 0;
         this.health = 100;
         this.food = 40;

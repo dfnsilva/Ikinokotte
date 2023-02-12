@@ -58,6 +58,8 @@ function logout(){
     document.cookie = `loggedUserPetHistory=${loggedUserPetHistory};max-age=-1`; // one day
     stopPet()
     loggedUser=null;
+    loggedUserPetHistory = null;
+    myPet=null;
     setTimeout(logout_hideThings(), 2200);
 }
 function logout_hideThings(){

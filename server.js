@@ -10,7 +10,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 let users = require('./db/users');
 let pets = require('./db/pets');
-const { count } = require("console");
 
 app.post("/signUp", (req, res) => {
     const username = req.body.username;
@@ -41,7 +40,6 @@ app.post("/signUp", (req, res) => {
 //Login
 
 app.post("/login", (req, res) => {
-    console.log(req.body)
     const name = req.body.username;
     const senha = req.body.password;
     for (user of users) {
@@ -58,36 +56,39 @@ app.post("/login", (req, res) => {
 });
 
 //~
-/* 
 
-app.delete("/deleteProd/:name", (req, res) => {
-    const name= req.params.name;
+app.post("/deletePetUpdateUser", (req, res) => {
+    
+    const owner = req.body.ownerName;
     let dbAux = [];
-    for (prod of pets){
-        if (prod.name == name) {
-            result=prod;
-        }else{
-            dbAux.push(prod);
+    for (pet of pets){
+        if (pet.owner != owner) {
+            dbAux.push(pet);
         }
     }
     pets = [];
     for (let i = 0; i < dbAux.length; i++) {
         pets.push(dbAux[i]); // copia os dados
     }
+
+    const petHistoryEntry= req.body.petHistory;
+    for (user of users){
+        if (user.username == owner) {
+            user.petHistory+= petHistoryEntry
+            break
+        }
+    }
+    writeToDB("./db/users.json", users);
     writeToDB("./db/pets.json", pets);
     return res.status(201).send({
-        msg: `Product deleted`
+        msg: `Pet Deleted and User Updated deleted`
     });
     
 });
 
-*/
-
 app.get("/getSavedPet/:name", (req, res) => {
     const owner = req.params.name;
     for (pet of pets){
-        console.log(owner)
-        console.log(pet.owner)
         if (pet.owner == owner) {
             return res.status(201).send({
                 msg: `User saved Pet: ${pet.name}`,
@@ -109,7 +110,6 @@ app.post("/savePet", (req, res) => {
             msg: `New Pet Save Created`
         });
     }else{
-        console.log(req.body)
         let dbAux = [];
         for (pet of pets){
             if (pet.owner == savePet.owner) {
@@ -122,7 +122,6 @@ app.post("/savePet", (req, res) => {
         for (pet of dbAux){
             pets.push(pet); // copia os dados
         }
-        console.log(pets)
         writeToDB("./db/pets.json", pets);
         return res.status(201).send({
             msg: `Pet Saved`

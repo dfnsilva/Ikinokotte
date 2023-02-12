@@ -3,12 +3,12 @@ let myPet;
 let owner;
 let UHintervalId;
 let URintervalId;
-function newPet(name,ownderName){
-    return new ikinokotte(name,ownderName);
+function newPet(name,ownerName){
+    return new ikinokotte(name,ownerName);
 }
 
 function age(){
-    console.log("age")
+    myPet.age = getAge(myPet.birth)
 }
 function clampAllVariables(){
     myPet.food = Math.min(Math.max(myPet.food, 0), 200);
@@ -100,7 +100,6 @@ function loadPetFromCookie(cookiename) {
 }
 
 function afterLogin(){
-    //makeThingsAppear()
     myPet =loadPetFromCookie(loggedUser+'ikinokotte')
     if(myPet == null){
         createNewPetMessage("show");
@@ -113,10 +112,7 @@ function afterLogin(){
 }
 function createNewPet(){
     petName = document.getElementById("petName").value
-    console.log(petName)
-    console.log(document.getElementById("petName").value)
     myPet = newPet(petName,loggedUser);
-    console.log(myPet)
     createNewPetMessage("hide");
     savePetToCookie(loggedUser+'ikinokotte',myPet)
     petElementsVisibility("show")
@@ -130,10 +126,7 @@ async function checkSavedPet(){
     });
     stopPet()
     json = await response.json();
-    alert(json.msg);
-    console.log(json.pet)
     petJSON = json.pet
-    console.log(petJSON)
     myPet = petJSON
     startPet()
 }
@@ -145,7 +138,6 @@ async function savePetToDB(){
         headers: { "Content-type": "application/json; charset=UTF-8" },
     });
     json = await response.json();
-    alert(json.msg)
 }
 
 function startPet(){
@@ -236,17 +228,53 @@ async function updateHealth(){
         }
 
         myPet.health = Math.min(Math.max(myPet.health, 0), 100);
-
+        age()
+        myPet.lastVisited = new Date() 
         alterHealth();
         if (myPet.health <= 0) {
             showPetDeadMessage(myPet.name)
             setTimeout(fancyStatsAnim("disappear"),100);
-            clearInterval(UHintervalId);
-            clearInterval(URintervalId);
+            petHistoryMaker(myPet)
+            setTimeout(clearTimers(),500);
+            myPet=null
             //send to server the notice
         }
         savePetToCookie(loggedUser+'ikinokotte',myPet)
       }, 5000);//CHANGE TO REAL TIME
 }
+function clearTimers(){
+    clearInterval(UHintervalId);
+    clearInterval(URintervalId);
+    UHintervalId=null;
+    URintervalId=null;
+}
+function petHistoryMaker(pet){
+    var historyString = ""
+    historyString+="owner="+pet.owner+",";
+    historyString+="name="+pet.name+",";
+    historyString+="birth="+pet.birth+",";
+    historyString+="age="+pet.age+",";
+    historyString+="food="+pet.food+",";
+    historyString+="water="+pet.water+",";
+    historyString+="mood="+pet.mood+";";
+    loggedUserPetHistory+=historyString
+    updatePetHistoryAndDeletePetSave(pet.owner,historyString)
+
+}
+async function updatePetHistoryAndDeletePetSave(owner,history){
+    const petDelete = {
+        ownerName: owner,
+        petHistory: history
+    }
+    const response = await makeRequest("http://localhost:8080/deletePetUpdateUser", {
+        method: "POST",
+        body: JSON.stringify(petDelete),
+        headers: { "Content-type": "application/json; charset=UTF-8" },
+    });
+    json = await response.json();
+
+    
+}
+
 
 //createOrLoadPet();
