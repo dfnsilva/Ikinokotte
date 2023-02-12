@@ -1,3 +1,46 @@
+function closePopup(){
+    var elements = document.getElementsByClassName("loginD");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.visibility = "hidden";
+    }
+    var elements = document.getElementsByClassName("homePage");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.visibility = "visible";
+    }
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+}
+
+
+function loadLogin(){
+    document.getElementById("loginBtn").setAttribute("onClick", "tryLogin();");
+    document.getElementById("loginBtn").innerHTML = "Login";
+    document.getElementById("title").innerHTML = "Login";
+    var elements = document.getElementsByClassName("homePage");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.visibility = "hidden";
+    }
+    var elements = document.getElementsByClassName("loginD");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.visibility = "visible";
+    }
+}
+
+function loadSignUp(){
+    document.getElementById("loginBtn").setAttribute("onClick", "trySignUp();");
+    document.getElementById("loginBtn").innerHTML = "Sign Up";
+    document.getElementById("title").innerHTML = "Sign Up";
+    var elements = document.getElementsByClassName("homePage");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.visibility = "hidden";
+    }
+    var elements = document.getElementsByClassName("loginD");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.visibility = "visible";
+    }
+}
+
+
 function alterHealth(){
     if(myPet.health < 20){
         document.getElementById('healthBar').classList.remove('yellow')

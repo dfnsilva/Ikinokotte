@@ -23,5 +23,10 @@
         "username": "papa",
         "password": "papa1",
         "petHistory": ""
+    },
+    {
+        "username": "joe",
+        "password": "mamam",
+        "petHistory": "tbd"
     }
 ]

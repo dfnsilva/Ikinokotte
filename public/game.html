@@ -11,6 +11,9 @@
     <link href="css/gameStyle.css" rel="stylesheet">
     <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css">
     <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="https://use.fontawesome.com/67c014f3d2.js"></script>
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
@@ -21,32 +24,36 @@
     <script src="scripts/ageSystem.js"></script>
 </head>
 
+
 <body class="mainbody" style="overflow: hidden;">
     <div class="pages">
         <div id="page1">
+
+            <div class="homePage">
+                <button class="buttonHome nes-btn" onclick="loadLogin()">Login</button>
+                <button class="buttonHome nes-btn" onclick="loadSignUp()">Sign Up</button>
+              </div>
+
             <div class="loginD">
-                <img src="images/loginBox2.png" class="boxL">
+                <div class="boxLogin"><img src="images/loginBox3.png"></div> 
+                <div class="petLogin"><img class="pet" src="images/pet.png"></div>
                 <div class="contentL">
-                    <div class="closeB" onclick="closePopup()">&times;</div>
-                        <h2 class="title">Login</h2>
+                    <div class="closeButton nes-pointer" onclick="closePopup()">&times;</div>
+                        <h2 class="title" id="title">Login</h2>
                         <div class="formElement">
-                            <label for="username">Email</label>
+                            <label for="username">Username</label>
                             <input autocomplete="off" type="text" id="username">
-                        </div>
-                        <div class="formElement2">
                             <label for="password">Password</label>
                             <input autocomplete="off" type="password" id="password"> 
-                            <center><div id="pMsg"></div></center>
-                        </div>
-                        <div class="formElement3">
-                            
-                            <button onclick="tryLogin()" id="loginBtn" class="buttonDL">Login</button>
-                            <button onclick="trySignUp()" class="buttonDL">signup</button>
-                        </div> 
-                        
-                    </div>
+                            <div class="pMsg" id="pMsg"></div>
+                            <button onclick="tryLogin()" id="loginBtn" class="buttonLoginBox nes-btn">Login</button>
+                    </div> 
+                </div>
             </div>
         </div>
+
+        
+
         <div id="page2">
             <div id="game">
                 <header class="header nes-container is-rounded is-dark">
@@ -79,6 +86,8 @@
                         <div id="moodBar" class="bars round blue" style="width:100%">|</div>
                     </div>
                 </div>
+
+
                 <footer class="footer">
                     <div class="gameButton">
                         <button onclick="giveWater()" class="buttonAction">Water</button>
@@ -88,9 +97,11 @@
                         <button onclick="checkSavedPet()" class="buttonAction">load</button>
                     </div>
                 </footer>
+
             </div>
         </div>    
     </div>
+
     <script>
         document.getElementById('id2').addEventListener('click',function() {
             document.getElementById('page1').classList.remove('animate1')
@@ -104,7 +115,5 @@
             successLogin(getCookie("loggedUser"),getCookie("loggedUserPetHistory"))
         }
     </script>
-    
-    
 </body>
 </html>

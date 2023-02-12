@@ -98,7 +98,6 @@ async function trySignUp() {
     });
     json = await response.json()
     failedLoginSignup(json)
-
 }
 
 async function makeRequest(url, options) {
