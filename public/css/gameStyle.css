@@ -7,7 +7,8 @@
     font-size: 15px;
     margin-left: 150px;
     margin-top: 10px;
-    border;
+    border-image-repeat:stretch!important;
+
   }
 
 .buttonAction:active {
@@ -21,6 +22,7 @@
     float: right; 
     margin-right: 20px;
     border-radius: 10%;
+    border-image-repeat:stretch!important;
 }
 
 .footer {

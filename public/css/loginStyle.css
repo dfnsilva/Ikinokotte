@@ -9,6 +9,7 @@
   font-size: 30px;
   margin-right: 13px!important;
   top: 45vh;
+  border-image-repeat:stretch!important;
 }
 
 
@@ -111,6 +112,7 @@
   font-size: 15px;
   margin-left: 150px;
   margin-top: 10px;
+  border-image-repeat:stretch!important;
 }
 
 .formElement .pMsg{
