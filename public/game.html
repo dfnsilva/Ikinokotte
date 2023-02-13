@@ -47,8 +47,8 @@
                             <input autocomplete="off" type="password" id="password"> 
                             <div class="pMsg" id="pMsg"></div>
                             <button onclick="tryLogin()" id="loginBtn" class="buttonLoginBox nes-btn">Login</button>
-                    </div> 
-                </div>
+                        </div> 
+                 </div>
             </div>
         </div>
 
@@ -56,11 +56,11 @@
 
         <div id="page2">
             <div id="game">
-                <header class="header nes-container is-rounded is-dark">
+                <header class="header ">
                     <div class="petName">Pet's name: <div id="name" style="display: inline;"></div></div>
                     <button class="buttonLogout" onclick="logout()" id="id2"><i class="fa fa-sign-out" style="font-size: 25px" aria-hidden="true"></i></button>
                 </header>
-                <div id ="newPetPopup" style="visibility:visible; border-style: groove; margin: 10px; margin-left: 35vw; margin-right: 35vw; border-radius: 10px ; background-color: darkgray; color: whitesmoke;" >
+                <div id ="newPetPopup">
                     <div class="formElement">
                         <label for="username">Insert the Pet name: </label>
                         <input autocomplete="off" type="text" id="petName">
@@ -90,11 +90,11 @@
 
                 <footer class="footer">
                     <div class="gameButton">
-                        <button onclick="giveWater()" class="buttonAction">Water</button>
-                        <button onclick="giveFood()" class="buttonAction">food</button>
-                        <button onclick="playPet()" class="buttonAction">play</button>
-                        <button onclick="savePetToDB()" class="buttonAction">Save</button>
-                        <button onclick="checkSavedPet()" class="buttonAction">load</button>
+                        <button onclick="giveWater()" class="buttonPlay nes-btn">Water</button>
+                        <button onclick="giveFood()" class="buttonPlay nes-btn">food</button>
+                        <button onclick="playPet()" class="buttonPlay nes-btn">play</button>
+                        <button onclick="savePetToDB()" class="buttonPlay nes-btn">Save</button>
+                        <button onclick="checkSavedPet()" class="buttonPlay nes-btn">load</button>
                     </div>
                 </footer>
 
@@ -103,6 +103,7 @@
     </div>
 
     <script>
+        scrollRight()
         document.getElementById('id2').addEventListener('click',function() {
             document.getElementById('page1').classList.remove('animate1')
             document.getElementById('page2').classList.remove('animate2')

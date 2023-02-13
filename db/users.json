@@ -2,7 +2,7 @@
     {
         "username": "admin",
         "password": "admin",
-        "petHistory": "owner=admin,name=my pet,birth=0,age=0,food=0,water=0,mood=-100;owner=admin,name=adminPet2,birth=2023-1-0,age=NaNyears Old,food=0,water=0,mood=-100;owner=admin,name=ad,birth=2023-1-0,age=NaNyears Old,food=0,water=19,mood=-100;owner=admin,name=ad,birth=2023-1-0,age=NaNyears Old,food=0,water=15,mood=-100;owner=admin,name=ad,birth=2023-1-0,age=NaNyears Old,food=0,water=23,mood=-100;owner=admin,name=adminPet,birth=2022-02-23,age=11.6months Old,food=0,water=23,mood=-100;owner=admin,name=asg,birth=2023-2-12,age=55.5Mins Old,food=0,water=23,mood=-100;owner=admin,name=asg,birth=2023-2-12,age=56.8Mins Old,food=0,water=23,mood=-100;"
+        "petHistory": "owner=admin,name=my pet,birth=0,age=0,food=0,water=0,mood=-100;owner=admin,name=adminPet2,birth=2023-1-0,age=NaNyears Old,food=0,water=0,mood=-100;owner=admin,name=ad,birth=2023-1-0,age=NaNyears Old,food=0,water=19,mood=-100;owner=admin,name=ad,birth=2023-1-0,age=NaNyears Old,food=0,water=15,mood=-100;owner=admin,name=ad,birth=2023-1-0,age=NaNyears Old,food=0,water=23,mood=-100;owner=admin,name=adminPet,birth=2022-02-23,age=11.6months Old,food=0,water=23,mood=-100;owner=admin,name=asg,birth=2023-2-12,age=55.5Mins Old,food=0,water=23,mood=-100;owner=admin,name=asg,birth=2023-2-12,age=56.8Mins Old,food=0,water=23,mood=-100;owner=admin,name=jose,birth=2023-02-13T22:19:34.968Z,age=23.4Mins Old,food=0,water=19,mood=-100;"
     },
     {
         "username": "banana",

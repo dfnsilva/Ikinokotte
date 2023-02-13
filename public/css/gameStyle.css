@@ -2,24 +2,13 @@
     text-align: center;
 }
 
-.buttonAction {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    letter-spacing: 2px;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #000;
-    cursor: pointer;
-    border: 3px solid;
-    padding: 0.25em 0.5em;
-    box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px;
+.buttonPlay {
     position: relative;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    margin-left: 10px;
-    
-}
+    font-size: 15px;
+    margin-left: 150px;
+    margin-top: 10px;
+    border;
+  }
 
 .buttonAction:active {
     box-shadow: 0px 0px 0px 0px;
@@ -35,7 +24,7 @@
 }
 
 .footer {
-    height: 45px;
+    height: 75px;
     padding:1%;
     bottom: 0;
     left: 0;
@@ -61,6 +50,7 @@
 .petName {
     display: inline;
 }
+
 .petThings{
     opacity: 0;
     margin-top: 200px;
@@ -98,18 +88,20 @@
 }
 
 .round {
-    border-radius:4px
+    border-radius:4px;
 }
 
 .pages{
     position: absolute;
 }
+
 #page1{
     height: 100vh;
     width: 100vw;
     margin-left: 0vw;
     position: relative;
 }
+
 #page2{
     background-color: rgb(29, 102, 65);
     height: 100vh;
@@ -118,23 +110,26 @@
     margin-left: 100vw;
     position: relative;
 }
+
 body{
     margin: 0;
 }
+
 .animate1 {
-    animation-duration: 2s;
+    animation-duration: 0s;
     animation-name: move1;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
 
 .animate2 {
-    animation-duration: 2s;
+    animation-duration: 0s;
     animation-name: move2;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     
 }
+
 .animate3 {
     animation-duration: 2s;
     animation-name: move3;
@@ -159,6 +154,7 @@ body{
         margin-left: -100vw;
     }
 }
+
 @keyframes move2 {
     0% {
         margin-left: 100vw;
@@ -167,6 +163,7 @@ body{
         margin-left: 0vw;
     }
 }
+
 @keyframes move3 {
     0% {
         margin-left: -100vw;
@@ -175,6 +172,7 @@ body{
         margin-left: 0vw;
     }
 }
+
 @keyframes move4 {
     0% {
         margin-left: 0vw;
@@ -183,6 +181,7 @@ body{
         margin-left: 100vw;
     }
 }
+
 @keyframes disappear {
     0% {
       transform: translateY(0);
@@ -204,11 +203,13 @@ body{
       opacity: 1;
     }
 }
+
 .fancyAnimationAppear{
     animation: appear 0.5s linear forwards;
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
 }
+
 .fancyAnimationDisappear{
     animation: disappear 0.5s linear forwards;
     animation-delay: 0.5s;
@@ -216,7 +217,7 @@ body{
 }
 
 
-/* Volume Bar */
+
 /* Volume Bar*/
 
 /*#player {
