@@ -35,20 +35,20 @@
               </div>
 
             <div class="loginD">
-                <div class="boxLogin"><img src="images/loginBox3.png"></div> 
-                <div class="petLogin"><img class="pet" src="images/pet.png"></div>
-                <div class="contentL">
+                
+                <img src="images/loginBox3.png" class="boxLogin">
+                    <img src="images/pet2.png" class="petLogin">
                     <div class="closeButton nes-pointer" onclick="closePopup()">&times;</div>
-                        <h2 class="title" id="title">Login</h2>
-                        <div class="formElement">
-                            <label for="username">Username</label>
-                            <input autocomplete="off" type="text" id="username">
-                            <label for="password">Password</label>
-                            <input autocomplete="off" type="password" id="password"> 
-                            <div class="pMsg" id="pMsg"></div>
-                            <button onclick="tryLogin()" id="loginBtn" class="buttonLoginBox nes-btn">Login</button>
-                        </div> 
-                 </div>
+                    <h2 class="title" id="title">Login</h2>
+                    <div class="formElement">
+                        <label for="username">Username</label>
+                        <input autocomplete="off" type="text" id="username">
+                        <label for="password">Password</label>
+                        <input autocomplete="off" type="password" id="password"> 
+                        <div class="pMsg" id="pMsg"></div>
+                        <button onclick="tryLogin()" id="loginBtn" class="buttonLoginBox nes-btn">Login</button>
+                    </div> 
+                 
             </div>
         </div>
 
@@ -103,7 +103,6 @@
     </div>
 
     <script>
-        //scrollRight()
         document.getElementById('id2').addEventListener('click',function() {
             document.getElementById('page1').classList.remove('animate1')
             document.getElementById('page2').classList.remove('animate2')
