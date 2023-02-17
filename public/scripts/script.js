@@ -18,6 +18,7 @@ function loadLogin(){
     document.getElementById("title").innerHTML = "Login";
     var elements = document.getElementsByClassName("homePage");
     for (var i = 0; i < elements.length; i++) {
+        //elements[i].style.visibility = "hidden";
         elements[i].style.visibility = "hidden";
     }
     var elements = document.getElementsByClassName("loginD");
