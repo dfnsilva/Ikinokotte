@@ -116,14 +116,14 @@ body{
 }
 
 .animate1 {
-    animation-duration: 0s;
+    animation-duration: 2s;
     animation-name: move1;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
 
 .animate2 {
-    animation-duration: 0s;
+    animation-duration: 2s;
     animation-name: move2;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
