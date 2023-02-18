@@ -33,7 +33,7 @@ function giveWater(){
 
     }
     clampAllVariables()
-    alterWater();
+    updateScreen()
 }
 function giveFood(){
     foodType="bread";
@@ -51,7 +51,7 @@ function giveFood(){
             myPet.mood += 1;
     }
     clampAllVariables()
-    alterFood();
+    updateScreen()
 }
 function playPet(){
     playType="normal";
@@ -73,7 +73,7 @@ function playPet(){
     }
     
     clampAllVariables()
-    alterMood();
+    updateScreen()
 }
 
 function savePetToCookie(cookiename,object) {
