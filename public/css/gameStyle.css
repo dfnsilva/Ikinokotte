@@ -1,3 +1,5 @@
+/* Butões do Pet*/
+
 .gameButton {
     border-image-repeat:stretch!important;
     text-align: center;
@@ -22,9 +24,9 @@
     float: right; 
     margin-right: 20px;
     border-radius: 10%;
- 
 }
 
+/* General Stuff?*/
 .footer {
     height: 75px;
     padding:1%;
@@ -48,6 +50,15 @@
     position: relative;
 }
 
+/* Overall Table*/
+
+.gameWindow{
+    width: 100vw;
+    border-collapse: collapse;
+}
+
+/* Create New Pet*/
+
 .newPetPopup {
     width: 500px;
     background-color: whitesmoke;
@@ -57,18 +68,28 @@
     padding: 2px;
    
 }
+
 .fix{
     border-image-repeat:stretch!important;
 }
 
-
 .petName {
     display: inline;
 }
-.allPet{
-    display: inline!important;
-    width: 50%;
+
+/* Pet Status */
+
+.petStatus{
+    width: 200px;
 }
+
+.chatSize{
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: white;
+}
+
 .petThings{
     opacity: 0;
     margin-left: 1%;
@@ -77,11 +98,8 @@
     height: 400px;
     background-color: rgba(70, 173, 49, 0.473);
     padding: 0.5%;
-    
 }
-.petChat{
 
-}
 .bars{
     content:"";
     display:table;
@@ -116,133 +134,32 @@
     border-radius:4px;
 }
 
-.pages{
-    position: absolute;
-}
+/*Pet Game*/
 
-#page1{
-    height: 100vh;
-    width: 100vw;
-    margin-left: 0vw;
-    position: relative;
-}
-
-#page2{
-    background-color: rgb(29, 102, 65);
-    height: 100vh;
-    width: 100vw;
-    margin-top: -100vh;
-    margin-left: 100vw;
-    position: relative;
-    border-image-repeat:stretch!important;
-}
-
-body{
-    margin: 0;
-}
-
-.animate1 {
-    animation-duration: 2s;
-    animation-name: move1;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-
-.animate2 {
-    animation-duration: 2s;
-    animation-name: move2;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+.petGame{
     
 }
 
-.animate3 {
-    animation-duration: 2s;
-    animation-name: move3;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+/*Pet Chat */
+
+.petChat{
+    width: 27%;
 }
 
-.animate4 {
-    animation-duration: 2s;
-    animation-name: move4;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+.chatCont{
+    background-color:white;
+    height: 65vh;
+}
+
+.scrollChat{
+    overflow-y: scroll;
+    height: 50vh;
+    position: relative;
+}
+
+.ballonChat{
     
 }
-
-
-@keyframes move1 {
-    0% {
-        margin-left: 0vw;
-    }
-    100% {
-        margin-left: -100vw;
-    }
-}
-
-@keyframes move2 {
-    0% {
-        margin-left: 100vw;
-    }
-    100% {
-        margin-left: 0vw;
-    }
-}
-
-@keyframes move3 {
-    0% {
-        margin-left: -100vw;
-    }
-    100% {
-        margin-left: 0vw;
-    }
-}
-
-@keyframes move4 {
-    0% {
-        margin-left: 0vw;
-    }
-    100% {
-        margin-left: 100vw;
-    }
-}
-
-@keyframes disappear {
-    0% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(-100vh);
-      opacity: 0;
-    }
-  }
-  
-@keyframes appear {
-    0% {
-      transform: translateY(100vh);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-}
-
-.fancyAnimationAppear{
-    animation: appear 0.5s linear forwards;
-    animation-delay: 0.5s;
-    animation-fill-mode: forwards;
-}
-
-.fancyAnimationDisappear{
-    animation: disappear 0.5s linear forwards;
-    animation-delay: 0.5s;
-    animation-fill-mode: forwards;
-}
-
-
 
 /* Volume Bar*/
 

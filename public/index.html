@@ -71,6 +71,73 @@
                     <div id = "petMessage">******************</div>
                     <button id="createNewPet" style="border-radius: 10px ;"onclick="createNewPet()">NewPet</button>
                 </div>
+                <table class="gameWindow">
+                    <tr>
+                        <td class="petStatus">
+                            <div class="petThings" style="visibility: hidden;">
+                                health:<div id="health" style="display: inline;"></div>
+                                <div class="grey round">
+                                    <div id="healthBar" class="bars round blue" style="width:100%"></div>
+                                </div>
+                                food:<div id="food" style="display: inline;"></div>
+                                <div class="grey round">
+                                    <div id="foodBar" class="bars round blue" style="width:100%"></div>
+                                </div>
+                                water:<div id="water" style="display: inline;"></div>
+                                <div class="grey round">
+                                    <div id="waterBar" class="bars round blue" style="width:100%"></div>
+                                </div>
+                                mood:<div id="mood" style="display: inline;"></div>
+                                <div class="grey round">
+                                    <div id="moodBar" class="bars round blue" style="width:100%"></div>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td class="petGame">
+                            
+                        </td>
+
+                        <td class="petChat">
+                            <section class="nes-container chatCont">
+                                <div class="scrollChat">
+                                <section class="message-list" id="messages">
+                                  <section class="message -left ballonChat">
+                                    <!-- Balloon -->
+                                    <div class="nes-balloon from-left">
+                                      <p>Hello NES.css</p>
+                                    </div>
+                                  </section>
+                              
+                                  <section class="message -right">
+                                    <!-- Balloon -->
+                                    <div class="nes-balloon from-right" style="word-wrap: break-word; width: 95%;">
+                                      <p>Good morning. Thou hast had a good night's sleep, I hope.</p>
+                                    </div>
+                                  </section>
+                                </section>
+                                </div>
+                                <div style="background-color:#212529; padding: 1rem;" class="nes-field is-inline">
+                                    <label for="dark_field" style="color:#fff;">
+                                        <button type="button" class="nes-btn" id="enter"><i class="fa fa-check-square" aria-hidden="true"></i></button>
+                                    </label>
+                                    <input type="text" id="talk" class="nes-input is-dark" placeholder="Speak With It">
+                                </div>
+                              </section>
+                        </td>
+                    </tr>
+                </table>
+
+
+
+                <!--<div class = "newPetPopup" id ="newPetPopup">
+                    <div class="fix nes-field">
+                        <label for="username">Insert the Pet name: </label>
+                        <input class="nes-input" autocomplete="off" type="text" id="petName">
+                    </div>
+                    <div id = "petMessage">******************</div>
+                    <button id="createNewPet" style="border-radius: 10px ;"onclick="createNewPet()">NewPet</button>
+                </div>
                 <div class="allPet">
                     <div class="petThings" style="visibility: hidden;">
                         health:<div id="health" style="display: inline;"></div>
@@ -93,7 +160,7 @@
                     <div class="petChat">
                         asg
                     </div>
-                </div>
+                </div>-->
                 
 
 
@@ -112,6 +179,7 @@
     </div>
 
     <script>
+        scrollRight()
         document.getElementById('id2').addEventListener('click',function() {
             document.getElementById('page1').classList.remove('animate1')
             document.getElementById('page2').classList.remove('animate2')
