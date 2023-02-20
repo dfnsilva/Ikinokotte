@@ -41,10 +41,10 @@ function calculateAgeMetric(timeInMilliseconds){
 
 function calculateCyclesMissed(lastTime){
     var lastDate = new Date(lastTime)
-    var nowDate = new Date ()
+    var nowDate = new Date()
     lastDate=lastDate.getTime();
     nowDate=nowDate.getTime();
     var timePassed = nowDate-lastDate;
-    var cyclesPassed = timePassed/(1000*60*6) // one every 10 minutes
+    var cyclesPassed = timePassed/(1000*60*10) // one every 10 minutes
     return cyclesPassed
 }

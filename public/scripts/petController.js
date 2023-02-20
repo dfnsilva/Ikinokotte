@@ -20,8 +20,8 @@ function giveWater(){
     waterType="normal";
     switch(waterType){
         case "normal":
-            myPet.water += 5;
-            myPet.mood += 1;
+            myPet.water += 30;
+            myPet.mood += 2;
             break;
         case "mega normal":
             myPet.water += 5;
@@ -39,8 +39,8 @@ function giveFood(){
     foodType="bread";
     switch(foodType){
         case "bread":
-            myPet.food += 5;
-            myPet.mood += 1;
+            myPet.food += 30;
+            myPet.mood += 10;
             break;
         case "mega bread":
             myPet.food += 50;
@@ -140,107 +140,128 @@ async function savePetToDB(){
     json = await response.json();
 }
 
+function calculateTimeAway(lastTime){
+    var cycles = calculateCyclesMissed(lastTime);
+    console.log(myPet.food)
+    for (let i = 1; i < cycles; i++) {
+        console.log(i)
+        updateResources()
+        updateResources()
+        updateHealth()
+    }
+
+}
+async function startUpdateResourcesTimer(){
+    URintervalId = setInterval(() => {
+        updateResources()
+    }, 1000*60*5);//every 5 minutes
+
+}
+
+async function startUpdateHealthTimer(){
+    UHintervalId = setInterval(() => {
+        updateHealth()
+        myPet.lastVisited = new Date();
+    }, 1000*60*10);//every 10 minutes
+    
+}
 function startPet(){
+    calculateTimeAway(myPet.lastVisited)
     alterName();
     updateScreen();
-    updateHealth();
-    updateResources();
+    startUpdateHealthTimer();
+    startUpdateResourcesTimer();
 }
 function stopPet(){
     clearInterval(UHintervalId);
     clearInterval(URintervalId);
 }
-// Update the ikinokotte's health every minute
+
 function updateScreen(){
     alterFood();
     alterHealth();
     alterMood();
     alterWater();
 }
+
 async function updateResources(){
-    URintervalId = setInterval(() => {
-        if(myPet.food <20){
-            myPet.food-=5;
-            myPet.mood-=10;
-        }else if((myPet.food>=20 && myPet.food<70)){
-            myPet.food-=4;
-        }else if((myPet.food>=70 && myPet.food<140)){
-            myPet.food-=2;
-        }else if((myPet.food>140 && myPet.food<=180)){
-            myPet.food-=1;
-        }else{
-            myPet.food-=1;
-            myPet.mood-=10;
-        }
-        
-        if(myPet.water <40){
-            myPet.water-=4;
-            myPet.mood-=5;
-        }else if(myPet.water>=40 && myPet.water<80){
-            myPet.water-=2
-        }else{
-            myPet.water-=1
-        }
-        
-        if(myPet.mood <0){
-            myPet.mood-=2;
-            myPet.food-=5;
-        }else if(myPet.mood <80){
-            myPet.mood-=1;
-        }
+    if(myPet.food <20){
+        myPet.food-=5;
+        myPet.mood-=10;
+    }else if((myPet.food>=20 && myPet.food<70)){
+        myPet.food-=4;
+    }else if((myPet.food>=70 && myPet.food<140)){
+        myPet.food-=2;
+    }else if((myPet.food>140 && myPet.food<=180)){
+        myPet.food-=1;
+    }else{
+        myPet.food-=1;
+        myPet.mood-=10;
+    }
+    
+    if(myPet.water <40){
+        myPet.water-=4;
+        myPet.mood-=5;
+    }else if(myPet.water>=40 && myPet.water<80){
+        myPet.water-=2
+    }else{
+        myPet.water-=1
+    }
+    
+    if(myPet.mood <0){
+        myPet.mood-=2;
+        myPet.food-=5;
+    }else if(myPet.mood <80){
+        myPet.mood-=1;
+    }
 
-        clampAllVariables();
-        updateScreen()
-        savePetToCookie(loggedUser+'ikinokotte',myPet)
-      }, 2500);//CHANGE TO REAL TIME
-
+    clampAllVariables();
+    updateScreen()
+    savePetToCookie(loggedUser+'ikinokotte',myPet)
 }
 
 async function updateHealth(){
-    UHintervalId = setInterval(() => {
-        if(myPet.food <20){
-            myPet.health-=10;
-        }else if((myPet.food>=20 && myPet.food<70) ){
-            myPet.health-=2;
-        }else if((myPet.food>=70 && myPet.food<140)){
-            myPet.health+=2;
-        }else if((myPet.food>=140 && myPet.food<=180)){
-            myPet.health-=1;
-        }else if( myPet.food > 180){
-            myPet.health-=4;
-        }
+    if(myPet.food <20){
+        myPet.health-=10;
+    }else if((myPet.food>=20 && myPet.food<70) ){
+        myPet.health-=2;
+    }else if((myPet.food>=70 && myPet.food<140)){
+        myPet.health+=2;
+    }else if((myPet.food>=140 && myPet.food<=180)){
+        myPet.health-=1;
+    }else if( myPet.food > 180){
+        myPet.health-=4;
+    }
 
-        if(myPet.water <40){
-            myPet.health-=2;
-        }else if(myPet.water>=40 && myPet.water<80){
-            myPet.health+=1;
-        }else{
-            myPet.health-=1;
-        }
+    if(myPet.water <40){
+        myPet.health-=2;
+    }else if(myPet.water>=40 && myPet.water<80){
+        myPet.health+=1;
+    }else{
+        myPet.health-=1;
+    }
+    
+    if(myPet.mood <0){
+        myPet.health-=1;
+    }else if(myPet.mood <=80){
+        myPet.health+=1;
+    }else{
+        myPet.health+=2;
+    }
 
-        
-        if(myPet.mood <0){
-            myPet.health-=1;
-        }else if(myPet.mood <=80){
-            myPet.health+=1;
-        }else{
-            myPet.health+=2;
-        }
-
-        myPet.health = Math.min(Math.max(myPet.health, 0), 100);
-        age()
-        myPet.lastVisited = new Date() 
-        alterHealth();
-        if (myPet.health <= 0) {
-            showPetDeadMessage(myPet.name)
-            setTimeout(fancyStatsAnim("disappear"),100);
-            petHistoryMaker(myPet)
-            setTimeout(clearTimers(),500);
-            myPet=null
-            //send to server the notice
-        }
-        savePetToCookie(loggedUser+'ikinokotte',myPet)
-      }, 5000);//CHANGE TO REAL TIME
+    myPet.health = Math.min(Math.max(myPet.health, 0), 100);
+    age()
+    myPet.lastVisited = new Date() 
+    alterHealth();
+    if (myPet.health <= 0) {
+        showPetDeadMessage(myPet.name)
+        setTimeout(fancyStatsAnim("disappear"),100);
+        petHistoryMaker(myPet)
+        setTimeout(clearTimers(),500);
+        myPet=null
+        //send to server the notice
+    }
+    savePetToCookie(loggedUser+'ikinokotte',myPet)
 }
 function clearTimers(){
     clearInterval(UHintervalId);
