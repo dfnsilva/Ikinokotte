@@ -152,7 +152,7 @@
 }
 
 .scrollChat{
-    overflow-y: scroll;
+    overflow-y:scroll;
     height: 50vh;
     position: relative;
 }

@@ -134,21 +134,32 @@ app.post("/savePet", (req, res) => {
 const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 app.post('/chat', async (req, res) => {
     const messages = req.body.chatHistory;
+    const own = req.body.owner;
+    const name= req.body.pet;
     console.log(messages)
+    const prmpt = `The following is a conversation 
+    between a pet and an owner, you are the pet.
+    The pet speaks in simple language, and is ,
+    your owner is ${own} and your name is ${name}
+    your stats= [ health:80/100 ; food:2/200 ; 
+    water:70/100 ; mood:50/100]
+    try to not mention your stats. your job 
+    is ask for things to make your health 
+    better and chat with the owner.`+messages;
     const gpt = await openai.createCompletion({
         model: "text-davinci-003",
-        prompt: "The following is a conversation between a pet and an owner, you are the pet. The pet speaks in simple language, and is , your owner is Delda and your name is test1 your stats are [ health:80/100 ; food:2/200 ; water:70/100 ; mood:50/100] try to not mention your stats. your job is ask for things to make your health better and chat with the Onwer."+messages+"\nPet:",
+        prompt: prmpt,
         temperature: 0.9,
         max_tokens: 3800,
         top_p: 1,
         frequency_penalty: 0,
         presence_penalty: 0.6,
-        stop: ["Owner:", "Pet:"],
+        stop: [`${own}:`, `${name}:`],
     });
     console.log("worked\n")
     console.log(gpt.data.choices[0].text)
