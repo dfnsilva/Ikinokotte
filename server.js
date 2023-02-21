@@ -134,7 +134,7 @@ app.post("/savePet", (req, res) => {
 const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 app.post('/chat', async (req, res) => {
@@ -155,7 +155,7 @@ app.post('/chat', async (req, res) => {
         model: "text-davinci-003",
         prompt: prmpt,
         temperature: 0.9,
-        max_tokens: 3800,
+        max_tokens: 200,
         top_p: 1,
         frequency_penalty: 0,
         presence_penalty: 0.6,

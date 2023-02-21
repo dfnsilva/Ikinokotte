@@ -95,11 +95,12 @@
     margin-left: 5%;
     margin-right: 20px;
     width: 250px;
-    height: 300px;
+    height: 325px;
     background-color: rgba(255, 255, 255);
     padding: 5%;
     text-align: center;
 }
+
 
 .bars{
     content: "";
@@ -166,6 +167,7 @@
     overflow-y: auto;
     height: 50vh;
     position: relative;
+    
 }
 
 .balloonChat{
