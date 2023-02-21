@@ -134,7 +134,7 @@ app.post("/savePet", (req, res) => {
 const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 app.post('/chat', async (req, res) => {

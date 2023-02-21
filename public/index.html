@@ -37,7 +37,7 @@
 
             <div class="loginD">
                 <img src="images/loginBox3.png" class="boxLogin">
-                <img src="images/pet.png" class="petLogin">
+                <img src="images/pet2.png" class="petLogin">
                 <div class="formElement">
                     
                     <div class="closeButton nes-pointer" onclick="closePopup()">&times;</div>
@@ -60,7 +60,7 @@
 
         <div id="page2">
             <div id="game">
-                <header class="header ">
+                <header class="nes-container header">
                     <div class="petName">Pet's name: <div id="name" style="display: inline;"></div></div>
                     <button class="buttonLogout" onclick="logout()" id="id2"><i class="fa fa-sign-out" style="font-size: 25px" aria-hidden="true"></i></button>
                 </header>
@@ -101,7 +101,7 @@
 
                         <td class="petChat">
                             <section class="nes-container chatCont">
-                                <div class="scrollChat">
+                                <div class="scrollChat" id="scrollChat">
                                 <section class="message-list" id="messages">
                                 </section>
                                 </div>
@@ -116,7 +116,7 @@
                     </tr>
                 </table>
                 
-                <footer class="footer">
+                <footer class="nes-container footer">
                     <div class="gameButton">
                         <button onclick="giveWater()" class="buttonPlay nes-btn">Water</button>
                         <button onclick="giveFood()" class="buttonPlay nes-btn">Food</button>
@@ -131,7 +131,6 @@
     </div>
 
     <script>
-        scrollRight()
         document.getElementById('id2').addEventListener('click',function() {
             document.getElementById('page1').classList.remove('animate1')
             document.getElementById('page2').classList.remove('animate2')
@@ -143,6 +142,7 @@
             
             successLogin(getCookie("loggedUser"),getCookie("loggedUserPetHistory"))
         }
+        addEnterToSendEvent()
     </script>
 </body>
 </html>

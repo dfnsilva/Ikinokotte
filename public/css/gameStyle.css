@@ -3,6 +3,7 @@
 .gameButton {
     border-image-repeat:stretch!important;
     text-align: center;
+    margin-top: -10px;
 }
 
 .buttonPlay {
@@ -32,21 +33,19 @@
     padding:1%;
     bottom: 0;
     left: 0;
-    position: absolute;
-    background-color: #5e5e5e;
-    width: 100%;
-    color: whitesmoke;
+    position: absolute!important;
+    background-color: #FFFBE9;
+    width: 100%;    
 }
 
 .header {
-    font-size: 20px;
-    font-family: 'Courier New', monospace;
+    font-size: 15px;
     padding:1%;
     top: 0;
     left: 0;
-    background-color: #5e5e5e;
+    background-color: #FFFBE9;
     width: 100%;
-    color: whitesmoke;
+    color: black;
     position: relative;
 }
 
@@ -100,7 +99,6 @@
     padding: 5%;
     text-align: center;
 }
-
 
 .bars{
     content: "";

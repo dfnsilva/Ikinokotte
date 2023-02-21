@@ -1,3 +1,13 @@
+function addEnterToSendEvent(){
+    const inputText = document.getElementById('talk');
+
+inputText.addEventListener('keydown', function(event) {
+  if (event.keyCode === 13) {
+        sendMessage()
+  }
+});
+}
+
 function closePopup(){
     var elements = document.getElementsByClassName("loginD");
     for (var i = 0; i < elements.length; i++) {
