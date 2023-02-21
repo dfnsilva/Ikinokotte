@@ -92,18 +92,20 @@
 
 .petThings{
     opacity: 0;
-    margin-left: 1%;
+    margin-left: 5%;
     margin-right: 20px;
-    width: 200px;
-    height: 400px;
-    background-color: rgba(70, 173, 49, 0.473);
-    padding: 0.5%;
+    width: 250px;
+    height: 300px;
+    background-color: rgba(255, 255, 255);
+    padding: 5%;
+    text-align: center;
 }
 
 .bars{
-    content:"";
-    display:table;
-    clear:both;
+    content: "";
+    display: table;
+    clear: both;
+    margin-top: 20px;
 }
 
 .red {
@@ -137,7 +139,15 @@
 /*Pet Game*/
 
 .petGame{
-    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    width: 50%;
+}
+
+.petInGame img{
+
 }
 
 /*Pet Chat */
@@ -147,18 +157,23 @@
 }
 
 .chatCont{
+    border-image-repeat:stretch!important;
     background-color:white;
     height: 65vh;
 }
 
 .scrollChat{
-    overflow-y:scroll;
+    overflow-y: auto;
     height: 50vh;
     position: relative;
 }
 
-.ballonChat{
-    
+.balloonChat{
+    border-image-repeat:stretch!important;
+}
+
+.nes-balloon {
+    border-image-repeat: stretch!important; 
 }
 
 /* Volume Bar*/
