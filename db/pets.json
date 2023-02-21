@@ -23,13 +23,13 @@
     },
     {
         "owner": "admin",
-        "name": "this pet",
-        "birth": "2023-02-20T14:55:28.978Z",
-        "lastVisited": "2023-02-20T16:09:43.553Z",
-        "age": "1.2Hours Old",
-        "health": 45,
-        "food": 89,
-        "water": 83,
-        "mood": 100
+        "name": "asdg",
+        "birth": "2023-02-20T23:03:55.985Z",
+        "lastVisited": "2023-02-20T23:03:55.985Z",
+        "age": 0,
+        "health": 100,
+        "food": 40,
+        "water": 80,
+        "mood": 50
     }
 ]

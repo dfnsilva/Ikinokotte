@@ -128,6 +128,7 @@ async function checkSavedPet(){
     json = await response.json();
     petJSON = json.pet
     myPet = petJSON
+    myPet.lastVisited = new Date()
     startPet()
 }
 async function savePetToDB(){
