@@ -2,31 +2,7 @@
     {
         "username": "admin",
         "password": "admin",
-        "petHistory": "owner=admin,name=my pet,birth=0,age=0,food=0,water=0,mood=-100;owner=admin,name=adminPet2,birth=2023-1-0,age=NaNyears Old,food=0,water=0,mood=-100;owner=admin,name=ad,birth=2023-1-0,age=NaNyears Old,food=0,water=19,mood=-100;owner=admin,name=ad,birth=2023-1-0,age=NaNyears Old,food=0,water=15,mood=-100;owner=admin,name=ad,birth=2023-1-0,age=NaNyears Old,food=0,water=23,mood=-100;owner=admin,name=adminPet,birth=2022-02-23,age=11.6months Old,food=0,water=23,mood=-100;owner=admin,name=asg,birth=2023-2-12,age=55.5Mins Old,food=0,water=23,mood=-100;owner=admin,name=asg,birth=2023-2-12,age=56.8Mins Old,food=0,water=23,mood=-100;owner=admin,name=jose,birth=2023-02-13T22:19:34.968Z,age=23.4Mins Old,food=0,water=19,mood=-100;owner=admin,name=sad,birth=2023-02-17T23:41:00.952Z,age=1.6Mins Old,food=0,water=23,mood=-100;owner=admin,name=sad,birth=Fri Feb 17 2023 23:43:00 GMT+0000 (Western European Standard Time),age=1.1Mins Old,food=0,water=23,mood=-100;owner=admin,name=sad,birth=2023-02-17T23:44:45.783Z,age=4.1Mins Old,food=0,water=9,mood=-12;owner=admin,name=asdg,birth=2023-02-18T00:16:27.376Z,age=1.3Mins Old,food=0,water=23,mood=-100;owner=admin,name=new pet,birth=Sat Feb 18 2023 00:43:17 GMT+0000 (Western European Standard Time),age=1.1Mins Old,food=0,water=23,mood=-100;owner=admin,name=new pet,birth=2023-02-18T00:45:18.572Z,age=1.2Mins Old,food=0,water=23,mood=-100;owner=admin,name=sagdhf,birth=2023-02-18T00:46:51.319Z,age=7.0Mins Old,food=0,water=0,mood=-100;owner=admin,name=s,birth=2023-02-18T00:54:02.161Z,age=1.1Mins Old,food=0,water=23,mood=-100;owner=admin,name=fasfa,birth=2023-02-18T00:55:13.758Z,age=1.2Mins Old,food=0,water=19,mood=-100;owner=admin,name=asdf,birth=Sat Feb 18 2023 00:56:28 GMT+0000 (Western European Standard Time),age=1.1Mins Old,food=0,water=23,mood=-100;owner=admin,name=asdf,birth=2023-02-18T00:57:35.984Z,age=1.2Mins Old,food=0,water=19,mood=-100;owner=admin,name=asd,birth=2023-02-18T00:59:18.800Z,age=1.1Mins Old,food=0,water=23,mood=-100;owner=admin,name=dsaesdfj,birth=Sat Feb 18 2023 01:00:37 GMT+0000 (Western European Standard Time),age=1.1Mins Old,food=0,water=23,mood=-100;owner=admin,name=agh,birth=2023-02-18T01:02:10.205Z,age=1.5Mins Old,food=65,water=0,mood=-87;owner=admin,name=,birth=2023-02-18T01:03:44.972Z,age=3.0Mins Old,food=0,water=0,mood=-100;owner=admin,name=asd,birth=2023-02-18T01:07:55.208Z,age=1.1Mins Old,food=0,water=23,mood=-100;owner=admin,name=gcfhgvjh,birth=Sat Feb 18 2023 01:09:07 GMT+0000 (Western European Standard Time),age=1.1Mins Old,food=0,water=23,mood=-100;owner=admin,name=sagdhj,birth=2023-02-19T19:49:45.208Z,age=2.7Mins Old,food=0,water=0,mood=-100;owner=admin,name=this pet,birth=2023-02-20T14:55:28.978Z,age=8.1Hours Old,food=0,water=0,mood=-75;"
-    },
-    {
-        "username": "banana",
-        "password": "12345",
-        "petHistory": ""
-    },
-    {
-        "username": "newuser",
-        "password": "newuser",
-        "petHistory": "owner=newuser,name=asdf,birth=2023-02-23,age=-15791.5Mins Old,food=0,water=23,mood=-100;"
-    },
-    {
-        "username": "newuser1",
-        "password": "password1",
-        "petHistory": "owner=newuser1,name=asd,birth=2023-02-23,age=NaNyears Old,food=0,water=23,mood=-100;"
-    },
-    {
-        "username": "papa",
-        "password": "papa1",
-        "petHistory": ""
-    },
-    {
-        "username": "joe",
-        "password": "mamam",
-        "petHistory": "tbd"
+        "petHistory": "tbd",
+        "chatHistory": []
     }
 ]

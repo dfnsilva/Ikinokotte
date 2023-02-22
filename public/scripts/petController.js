@@ -33,6 +33,7 @@ function giveWater(){
 
     }
     clampAllVariables()
+    savePetToCookie(loggedUser+'ikinokotte',myPet)
     updateScreen()
 }
 function giveFood(){
@@ -51,6 +52,7 @@ function giveFood(){
             myPet.mood += 1;
     }
     clampAllVariables()
+    savePetToCookie(loggedUser+'ikinokotte',myPet)
     updateScreen()
 }
 function playPet(){
@@ -73,6 +75,7 @@ function playPet(){
     }
     
     clampAllVariables()
+    savePetToCookie(loggedUser+'ikinokotte',myPet)
     updateScreen()
 }
 

@@ -172,12 +172,12 @@ function createNewPetMessage(show){
 
 function petElementsVisibility(show){
     if(show=="show"){
-        var elements = document.getElementsByClassName("petThings");
+        var elements = document.getElementsByClassName("gameWindow");
         for (var i = 0; i < elements.length; i++) {
             elements[i].style.visibility = "visible";
         }
     }else{
-        var elements = document.getElementsByClassName("petThings");
+        var elements = document.getElementsByClassName("gameWindow");
         for (var i = 0; i < elements.length; i++) {
             elements[i].style.visibility = "hidden";
         }
@@ -186,7 +186,13 @@ function petElementsVisibility(show){
 }
 function fancyStatsAnim(appear){
     if(appear=="appear"){
-        var elements = document.getElementsByClassName("petThings");
+        var elements = document.getElementsByClassName("gameWindow");
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.opacity = "0";
+            elements[i].classList.add('fancyAnimationAppear')
+            elements[i].classList.remove('fancyAnimationDisappear')
+        }
+        var elements = document.getElementsByClassName("chatCont");
         for (var i = 0; i < elements.length; i++) {
             elements[i].style.opacity = "0";
             elements[i].classList.add('fancyAnimationAppear')
@@ -194,7 +200,7 @@ function fancyStatsAnim(appear){
         }
     }else{
         console.log("disappear")
-        var elements = document.getElementsByClassName("petThings");
+        var elements = document.getElementsByClassName("gameWindow");
         for (var i = 0; i < elements.length; i++) {
             elements[i].style.opacity = "1";
             elements[i].classList.remove('fancyAnimationAppear')

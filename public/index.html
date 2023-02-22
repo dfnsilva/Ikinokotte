@@ -65,9 +65,9 @@
                     <button class="buttonLogout" onclick="logout()" id="id2"><i class="fa fa-sign-out" style="font-size: 25px" aria-hidden="true"></i></button>
                 </header>
                 <div class = "newPetPopup" id ="newPetPopup">
-                    <div class="fix nes-field">
+                    <div class="nes-field">
                         <label for="username">Insert the Pet name: </label>
-                        <input class="nes-input" autocomplete="off" type="text" id="petName">
+                        <input class="nes-input fix" autocomplete="off" type="text" id="petName">
                     </div>
                     <div id = "petMessage">******************</div>
                     <button id="createNewPet" style="border-radius: 10px ;"onclick="createNewPet()">NewPet</button>
@@ -75,7 +75,7 @@
                 <table class="gameWindow">
                     <tr>
                         <td class="petStatus">
-                            <div class="nes-container petThings" style="visibility: hidden;">
+                            <div class="nes-container petBars">
                                 Health:<div id="health" style="display: inline;"></div>
                                 <div class="grey round">
                                     <div id="healthBar" class="bars round blue" style="width:100%;"></div>
@@ -107,9 +107,9 @@
                                 </div>
                                 <div style="background-color:#212529; padding: 1rem;" class="nes-field is-inline">
                                     <label for="dark_field" style="color:#fff;">
-                                        <button type="button" onclick="sendMessage()" class="nes-btn" id="enter"><i class="fa fa-check-square" aria-hidden="true"></i></button>
+                                        <button type="button" onclick="sendMessage()" class="nes-btn fix" id="enter"><i class="fa fa-check-square" aria-hidden="true"></i></button>
                                     </label>
-                                    <input type="text" id="talk" class="nes-input is-dark" placeholder="Speak With It">
+                                    <input type="text" id="talk" class="nes-input is-dark fix" placeholder="Speak With It">
                                 </div>
                               </section>
                         </td>

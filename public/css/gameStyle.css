@@ -52,6 +52,7 @@
 /* Overall Table*/
 
 .gameWindow{
+    visibility: hidden;
     width: 100vw;
     border-collapse: collapse;
 }
@@ -89,8 +90,7 @@
     background-color: white;
 }
 
-.petThings{
-    opacity: 0;
+.petBars{
     margin-left: 5%;
     margin-right: 20px;
     width: 250px;

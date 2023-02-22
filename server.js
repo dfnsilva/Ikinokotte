@@ -17,7 +17,8 @@ app.post("/signUp", (req, res) => {
         const newUser = {
             username: username,
             password: req.body.password,
-            petHistory: "tbd"
+            petHistory: "tbd",
+            chatHistory:[]
         }
         if (newUser.password.length < 5) {
             return res.status(400).send({
@@ -47,7 +48,8 @@ app.post("/login", (req, res) => {
             if (user.password === senha) {
                 return res.status(201).json({
                     user: user.username,
-                    petHistory:user.petHistory })
+                    petHistory:user.petHistory,
+                    chatHistory:user.chatHistory })
             } else {
                 return res.status(401).json({ msg: "Invalid Password!" })
             }
@@ -134,14 +136,14 @@ app.post("/savePet", (req, res) => {
 const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
-  apiKey: "Insert Key Here",
+  apiKey: "insert key here",
 });
 const openai = new OpenAIApi(configuration);
 app.post('/chat', async (req, res) => {
+
     const messages = req.body.chatHistory;
     const own = req.body.owner;
     const name= req.body.pet;
-    console.log(messages)
     const prmpt = `The following is a conversation 
     between a pet and an owner, you are the pet.
     The pet speaks in simple language, and is ,
@@ -161,8 +163,6 @@ app.post('/chat', async (req, res) => {
         presence_penalty: 0.6,
         stop: [`${own}:`, `${name}:`],
     });
-    console.log("worked\n")
-    console.log(gpt.data.choices[0].text)
     return res.status(201).send({
         message: gpt.data.choices[0].text
     });

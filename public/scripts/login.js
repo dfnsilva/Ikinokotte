@@ -1,7 +1,7 @@
 //if(localStorage.getItem("loggedUser")!=null)
 let loggedUser;
 let loggedUserPetHistory;
-
+let loggedChatHistory = []; // only 10 messages 5 each
 async function tryLogin(){
     const email = document.getElementById("username").value;
     const password = document.getElementById("password").value;
@@ -20,7 +20,7 @@ async function tryLogin(){
         case 201:
             {
                 // login ok
-                successLogin(json.user,json.petHistory);
+                successLogin(json.user,json.petHistory,json.chatHistory);
                 break;
             }
         case 401:
@@ -38,9 +38,10 @@ async function tryLogin(){
     }
     
 }
-function successLogin(username,petHistory){
+function successLogin(username,petHistory,chatHistory){
     loggedUser = username  // fill the global variable
     loggedUserPetHistory = petHistory // fill the global variable
+    loggedChatHistory = chatHistory
     document.cookie = `loggedUser=${username};max-age=86400`; // one day
     document.cookie = `loggedUserPetHistory=${petHistory};max-age=86400`; // one day
     scrollRight();
@@ -59,6 +60,7 @@ function logout(){
     stopPet()
     loggedUser=null;
     loggedUserPetHistory = null;
+    loggedChatHistory = null;
     myPet=null;
     setTimeout(logout_hideThings(), 2200);
 }
