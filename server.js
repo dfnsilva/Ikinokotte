@@ -136,7 +136,7 @@ app.post("/savePet", (req, res) => {
 const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
-  apiKey: "insert key here",
+  apiKey: "Insert-the-api-key-here",
 });
 const openai = new OpenAIApi(configuration);
 app.post('/chat', async (req, res) => {
@@ -146,11 +146,10 @@ app.post('/chat', async (req, res) => {
     const name= req.body.pet;
     const prmpt = `The following is a conversation 
     between a pet and an owner, you are the pet.
-    The pet speaks in simple language, and is ,
-    your owner is ${own} and your name is ${name}
-    your stats= [ health:80/100 ; food:2/200 ; 
-    water:70/100 ; mood:50/100]
-    try to not mention your stats. your job 
+    The pet speaks in simple language,
+    your owner is ${own} and your name is ${name}.
+    Your stats will display at the end of the owner's message.
+    Try to not mention your stats. your job 
     is ask for things to make your health 
     better and chat with the owner.`+messages;
     const gpt = await openai.createCompletion({

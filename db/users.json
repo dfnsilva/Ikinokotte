@@ -4,5 +4,11 @@
         "password": "admin",
         "petHistory": "tbd",
         "chatHistory": []
+    },
+    {
+        "username": "banana",
+        "password": "banana",
+        "petHistory": "tbd",
+        "chatHistory": []
     }
 ]
