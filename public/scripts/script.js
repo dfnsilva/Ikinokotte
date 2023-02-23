@@ -161,14 +161,12 @@ function showPetDeadMessage(name){
     document.getElementById("newPetPopup").style.visibility = "visible"
     document.getElementById("petMessage").innerHTML = name+" pet has died "
 }
-function createNewPetMessage(show){
-    
-    if(show=="show"){
-        document.getElementById("newPetPopup").style.visibility = "visible"
-    }else{
-        document.getElementById("newPetPopup").style.visibility = "hidden"
-    }
+
+
+function popupPetToggle(){
+    document.getElementById("popupPet").classList.toggle("active");
 }
+
 
 function petElementsVisibility(show){
     if(show=="show"){

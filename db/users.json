@@ -2,12 +2,54 @@
     {
         "username": "admin",
         "password": "admin",
-        "petHistory": "tbd",
+        "petHistory": "tbdowner=admin,name=bob,birth=2023-02-22T19:48:21.283Z,age=21.2Hours Old,food=0,water=27,mood=-100;",
         "chatHistory": []
     },
     {
         "username": "banana",
         "password": "banana",
+        "petHistory": "tbd",
+        "chatHistory": []
+    },
+    {
+        "username": "delda",
+        "password": "delda",
+        "petHistory": "tbd",
+        "chatHistory": []
+    },
+    {
+        "username": "fgrgtrg",
+        "password": "rtgrtgtr",
+        "petHistory": "tbd",
+        "chatHistory": []
+    },
+    {
+        "username": "eggrtgrtg",
+        "password": "grgrg",
+        "petHistory": "tbd",
+        "chatHistory": []
+    },
+    {
+        "username": "rgrgrg",
+        "password": "rgrgr",
+        "petHistory": "tbd",
+        "chatHistory": []
+    },
+    {
+        "username": "grgrgr",
+        "password": "grgrg",
+        "petHistory": "tbd",
+        "chatHistory": []
+    },
+    {
+        "username": "egg",
+        "password": "egggg",
+        "petHistory": "tbd",
+        "chatHistory": []
+    },
+    {
+        "username": "egg1",
+        "password": "eggg1",
         "petHistory": "tbd",
         "chatHistory": []
     }

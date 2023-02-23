@@ -105,18 +105,17 @@ function loadPetFromCookie(cookiename) {
 function afterLogin(){
     myPet =loadPetFromCookie(loggedUser+'ikinokotte')
     if(myPet == null){
-        createNewPetMessage("show");
+        popupPetToggle();
     }else{
-        createNewPetMessage("hide");
         petElementsVisibility("show")
         setTimeout(fancyStatsAnim("appear"),100);
-        startPet()
+        startPet();
     }
 }
 function createNewPet(){
     petName = document.getElementById("petName").value
     myPet = newPet(petName,loggedUser);
-    createNewPetMessage("hide");
+    popupPetToggle();
     savePetToCookie(loggedUser+'ikinokotte',myPet)
     petElementsVisibility("show")
     setTimeout(fancyStatsAnim("appear"),100);

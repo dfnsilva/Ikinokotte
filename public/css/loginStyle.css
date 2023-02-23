@@ -75,10 +75,10 @@
 
 .title{
   position: relative;
-  margin-left:160px;
   margin-top:300px;
   margin-bottom:70px;
   z-index: 4;
+  text-align: center;
 }
 
 .formElement{
@@ -92,8 +92,8 @@
 .formElement label{
   position: relative;
   font-size: 17px;
-  margin-right: 200px;
-  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 .formElement input{
@@ -105,7 +105,7 @@
   text-align: center;
   position: relative;
   font-size: 16px;
-  margin-left: 7px;
+  margin-left: 20px;
 
 }
 
@@ -113,15 +113,15 @@
 .formElement .buttonLoginBox {
   position: relative;
   font-size: 15px;
-  margin-left: 160px;
-  margin-top: -20px;
+  margin-left: 190px;
+  margin-top: 5px;
   border-image-repeat:stretch!important;
   
 }
 
 .formElement .pMsg{
-  margin-left: 150px;
-  margin-bottom: 10px;
+  margin-left: 100px;
+  margin-bottom: 15px;
   height: 20px;
 }
 	

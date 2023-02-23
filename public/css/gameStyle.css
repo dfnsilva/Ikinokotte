@@ -23,8 +23,12 @@
 .buttonLogout {
     display: inline; 
     float: right; 
-    margin-right: 20px;
     border-radius: 10%;
+    margin-top: -7px;
+}
+
+.fa-sign-out{
+    margin-left: ;
 }
 
 /* General Stuff?*/

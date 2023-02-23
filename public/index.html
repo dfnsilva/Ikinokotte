@@ -9,7 +9,7 @@
     <link href="css/loginStyle.css" rel="stylesheet">
     <link href="css/contentStyle.css" rel="stylesheet">
     <link href="css/gameStyle.css" rel="stylesheet">
-    <link href="css/cookiePopup.css" rel="stylesheet">
+    <link href="css/cookieStyle.css" rel="stylesheet">
     <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css"  type="text/css">
     <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" type="text/css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,9 +34,14 @@
             <div class="popup" id="popupCookie">
                 <div class="overlay"></div>
                 <div class="content nes-container">
-                    <div class="nes-btn close-btn" onclick="cookieAccept()">Compreendo</div>
-                    <h1 style="margin-bottom:50px;">Política de Cookies</h1>
-                    <p>Este site utiliza Cookies para o seu funcionamento. Se não consentir o uso de Cookies, não poderá visitar o site. Portanto, pedimos que nos dê o seu consentimento.</p>
+                    <h2 class="rainbow-text" style="margin-bottom:50px;">Welcome to Ikinokotte!!</h2>
+                    <br>
+                    <h3>Cookie Policy</h3>
+                    <br>
+                    <br>
+                    <br>     
+                    <p>This website uses Cookies for its operation. If you do not consent to the use of Cookies, you will not be able to visit the website. Therefore, we ask that you give us your consent.</p>
+                    <div class="nes-btn close-btn" onclick="cookiePopupToggle()">Accept</div>
                 </div>
             </div>
 
@@ -73,13 +78,19 @@
                     <div class="petName">Pet's name: <div id="name" style="display: inline;"></div></div>
                     <button class="buttonLogout" onclick="logout()" id="id2"><i class="fa fa-sign-out" style="font-size: 25px" aria-hidden="true"></i></button>
                 </header>
-                <div class = "newPetPopup" id ="newPetPopup">
-                    <div class="nes-field">
-                        <label for="username">Insert the Pet name: </label>
-                        <input class="nes-input fix" autocomplete="off" type="text" id="petName">
+                <div class="popup" id="popupPet">
+                    <div class="overlay"></div>
+                    <div class="content nes-container">
+                        <div class="nes-field">
+                            <label for="username">Insert the Pet name: </label>
+                            <input class="nes-input fix" autocomplete="off" type="text" id="petName">
+                        </div>
+                        <div id = "petMessage"></div>
+                        <button id="createNewPet" class="nes-btn" onclick="createNewPet()">NewPet</button>
+                        <p>To be continued...</p>
                     </div>
-                    <div id = "petMessage">******************</div>
-                    <button id="createNewPet" style="border-radius: 10px ;"onclick="createNewPet()">NewPet</button>
+                </div>
+                <div class = "newPetPopup" id ="newPetPopup">
                 </div>
                 <table class="gameWindow">
                     <tr>
@@ -140,7 +151,7 @@
     </div>
 
     <script>
-        cookieAccept();
+        cookiePopupToggle();
         document.getElementById('id2').addEventListener('click',function() {
             document.getElementById('page1').classList.remove('animate1')
             document.getElementById('page2').classList.remove('animate2')
@@ -149,7 +160,7 @@
             
         })
         if (isLogged()){
-            
+            cookiePopupToggle()
             successLogin(getCookie("loggedUser"),getCookie("loggedUserPetHistory"))
         }
         addEnterToSendEvent()

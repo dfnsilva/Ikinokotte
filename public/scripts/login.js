@@ -44,6 +44,10 @@ function successLogin(username,petHistory,chatHistory){
     loggedChatHistory = chatHistory
     document.cookie = `loggedUser=${username};max-age=86400`; // one day
     document.cookie = `loggedUserPetHistory=${petHistory};max-age=86400`; // one day
+    var elements = document.getElementsByClassName("loginD");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.visibility = "hidden";
+    }
     scrollRight();
     afterLogin()
 
@@ -62,11 +66,13 @@ function logout(){
     loggedUserPetHistory = null;
     loggedChatHistory = null;
     myPet=null;
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.visibility = "visible";
+    }
     setTimeout(logout_hideThings(), 2200);
 }
 function logout_hideThings(){
     petElementsVisibility("hide")
-    createNewPetMessage("hide")
 }
 
 function getCookie(name) {
