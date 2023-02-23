@@ -18,6 +18,7 @@ function closePopup(){
         elements[i].style.visibility = "visible";
     }
     document.getElementById("username").value = "";
+    document.getElementById("pMsg").innerHTML = "";
     document.getElementById("password").value = "";
 }
 
@@ -28,7 +29,6 @@ function loadLogin(){
     document.getElementById("title").innerHTML = "Login";
     var elements = document.getElementsByClassName("homePage");
     for (var i = 0; i < elements.length; i++) {
-        //elements[i].style.visibility = "hidden";
         elements[i].style.visibility = "hidden";
     }
     var elements = document.getElementsByClassName("loginD");

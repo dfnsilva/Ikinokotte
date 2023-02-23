@@ -157,7 +157,7 @@ function calculateTimeAway(lastTime){
 async function startUpdateResourcesTimer(){
     URintervalId = setInterval(() => {
         updateResources()
-    }, 1000*60*5);//every 5 minutes
+    }, 1000*30);//every 30 seconds
 
 }
 
@@ -165,7 +165,7 @@ async function startUpdateHealthTimer(){
     UHintervalId = setInterval(() => {
         updateHealth()
         myPet.lastVisited = new Date();
-    }, 1000*60*10);//every 10 minutes
+    }, 1000*60);//every 1 minute
     
 }
 function startPet(){

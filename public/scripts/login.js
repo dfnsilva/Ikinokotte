@@ -63,11 +63,13 @@ function logout(){
     loggedUser=null;
     loggedUserPetHistory = null;
     myPet=null;
+    var elements = document.getElementsByClassName("loginD");
     for (var i = 0; i < elements.length; i++) {
         elements[i].style.visibility = "visible";
     }
     setTimeout(logout_hideThings(), 2200);
 }
+
 function logout_hideThings(){
     petElementsVisibility("hide")
 }

@@ -45,6 +45,6 @@ function calculateCyclesMissed(lastTime){
     lastDate=lastDate.getTime();
     nowDate=nowDate.getTime();
     var timePassed = nowDate-lastDate;
-    var cyclesPassed = timePassed/(1000*60*10) // one every 10 minutes
+    var cyclesPassed = timePassed/(1000*60) // one every 1 minute
     return cyclesPassed
 }

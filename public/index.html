@@ -90,8 +90,7 @@
                         <p>To be continued...</p>
                     </div>
                 </div>
-                <div class = "newPetPopup" id ="newPetPopup">
-                </div>
+
                 <table class="gameWindow">
                     <tr>
                         <td class="petStatus">
@@ -162,6 +161,7 @@
         if (isLogged()){
             cookiePopupToggle()
             successLogin(getCookie("loggedUser"),getCookie("loggedUserPetHistory"))
+            loadLogin()
         }
         addEnterToSendEvent()
     </script>

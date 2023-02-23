@@ -27,10 +27,6 @@
     margin-top: -7px;
 }
 
-.fa-sign-out{
-    margin-left: ;
-}
-
 /* General Stuff?*/
 .footer {
     height: 75px;
@@ -59,18 +55,7 @@
     visibility: hidden;
     width: 100vw;
     border-collapse: collapse;
-}
-
-/* Create New Pet*/
-
-.newPetPopup {
-    width: 500px;
-    background-color: whitesmoke;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-left: 35%;
-    padding: 2px;
-   
+    margin-top:4vw;
 }
 
 .fix{
@@ -145,12 +130,8 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 200px;
+    margin-top: 22vw;
     width: 50%;
-}
-
-.petInGame img{
-
 }
 
 /*Pet Chat */
