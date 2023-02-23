@@ -1,4 +1,4 @@
-let chatHistory;
+let chatHistory = "";
 let lastMessageSentTime = 0;
 const cooldownTime = 5000; // cooldown time in milliseconds
 async function sendMessage(){
@@ -28,9 +28,7 @@ async function sendMessage(){
         
     }
 }
-function addNewAndRemoveOldFromChatHistory(msg){
 
-}
 //chatHistory += 
 function startChatCooldownAnimation(){
     var button = document.getElementById("enter")

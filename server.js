@@ -48,8 +48,7 @@ app.post("/login", (req, res) => {
             if (user.password === senha) {
                 return res.status(201).json({
                     user: user.username,
-                    petHistory:user.petHistory,
-                    chatHistory:user.chatHistory })
+                    petHistory:user.petHistory})
             } else {
                 return res.status(401).json({ msg: "Invalid Password!" })
             }
