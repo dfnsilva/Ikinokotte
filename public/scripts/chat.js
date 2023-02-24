@@ -17,7 +17,7 @@ async function sendMessage(){
         
         document.getElementById("talk").value = ""
         startChatCooldownAnimation()
-        const response = await makeRequest("http://localhost:8080/chat", {
+        const response = await makeRequest("www.ikinokotte.site/chat", {
             method: "POST",
             body: JSON.stringify({ chatHistory,loggedUser,myPet }),
             headers: { "Content-type": "application/json; charset=UTF-8" },

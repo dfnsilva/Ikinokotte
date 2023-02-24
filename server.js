@@ -200,4 +200,4 @@ function userExists(name) {
 app.use(express());
 app.use(express.static('public'));
 app.use('/node_modules/nes.css/css/nes.min.css', express.static(__dirname + '/node_modules/nes.css/css/nes.min.css', { type: 'text/css' }));
-app.listen(8080)
+app.listen(80)
