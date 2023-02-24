@@ -9,7 +9,7 @@ async function sendMessage(){
     }else{
         lastMessageSentTime = new Date().getTime();
         var msg = document.getElementById("talk").value
-        chatHistory = `\n${loggedUser}:`+msg+`.pet stats= 
+        chatHistory += `\n${loggedUser}:`+msg+`.pet stats= 
             [ health:${myPet.health}/100 ; food:${myPet.food}/200 ; 
             water:${myPet.water}/100 ; mood:${myPet.mood}/100].\nPet:`;
 
