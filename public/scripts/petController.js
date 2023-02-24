@@ -122,7 +122,7 @@ function createNewPet(){
     startPet()
 }
 async function checkSavedPet(){
-    const response = await makeRequest("www.ikinokotte.site/getSavedPet/"+loggedUser, {
+    const response = await makeRequest("ikinokotte.site/getSavedPet/"+loggedUser, {
         method: "GET",
         headers: { "Content-type": "application/json; charset=UTF-8" },
     });
@@ -135,7 +135,7 @@ async function checkSavedPet(){
 }
 async function savePetToDB(){
 
-    const response = await makeRequest("www.ikinokotte.site/savePet", {
+    const response = await makeRequest("ikinokotte.site/savePet", {
         method: "POST",
         body: JSON.stringify(myPet),
         headers: { "Content-type": "application/json; charset=UTF-8" },
