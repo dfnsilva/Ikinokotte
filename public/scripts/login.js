@@ -9,7 +9,7 @@ async function tryLogin(){
         username: email,
         password: password,
     };
-    const response = await makeRequest("ikinokotte.site/login", {
+    const response = await makeRequest("http://ikinokotte.site/login", {
         method: "POST",
         body: JSON.stringify(user),
         headers: { "Content-type": "application/json; charset=UTF-8" },
@@ -98,7 +98,7 @@ async function trySignUp() {
         username: username,
         password: password
     };
-    const response = await makeRequest("ikinokotte.site/signUp", {
+    const response = await makeRequest("http://ikinokotte.site/signUp", {
         method: "POST",
         body: JSON.stringify(user),
         headers: { "Content-type": "application/json; charset=UTF-8" },
