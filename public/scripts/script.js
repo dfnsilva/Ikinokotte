@@ -27,6 +27,7 @@ function loadLogin(){
     document.getElementById("loginBtn").setAttribute("onClick", "tryLogin();");
     document.getElementById("loginBtn").innerHTML = "Login";
     document.getElementById("title").innerHTML = "Login";
+    document.getElementById("petSignUp").src= "images/pet.png";
     var elements = document.getElementsByClassName("homePage");
     for (var i = 0; i < elements.length; i++) {
         elements[i].style.visibility = "hidden";
@@ -41,6 +42,7 @@ function loadSignUp(){
     document.getElementById("loginBtn").setAttribute("onClick", "trySignUp();");
     document.getElementById("loginBtn").innerHTML = "Sign Up";
     document.getElementById("title").innerHTML = "Sign Up";
+    document.getElementById("petSignUp").src= "images/pet2.png";
     var elements = document.getElementsByClassName("homePage");
     for (var i = 0; i < elements.length; i++) {
         elements[i].style.visibility = "hidden";
